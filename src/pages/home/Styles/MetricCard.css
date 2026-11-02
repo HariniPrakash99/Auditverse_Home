@@ -1,0 +1,209 @@
+.metric-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 312px;
+  height: 153px;
+  border-radius: var(--radius-xl, 12px);
+  box-shadow: var(--shadow-md, 0 4px 6px #0f172a12, 0 2px 4px #0f172a0a);
+  overflow: hidden;
+  color: #ffffff;
+  box-sizing: border-box;
+  font-family: var(--font-family, 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif);
+  background: linear-gradient(227deg, #1d4e8c 0%, #163b6e 100%);
+  transition: box-shadow var(--transition-fast, 0.15s) ease, transform var(--transition-fast, 0.15s) ease;
+  transition-duration: 150ms, 150ms;
+  transition-delay: 0ms, 0ms;
+  transition-timing-function: ease, ease;
+  transition-property: box-shadow, transform;
+  will-change: transform, box-shadow;
+}
+
+.stat-card,
+.metric-card {
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  .stat-card:hover,
+  .metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg, 0 10px 15px #0f172a14, 0 4px 6px #0f172a0a);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stat-card:hover,
+  .metric-card:hover {
+    transform: none;
+  }
+}
+
+.metric-card--blue,
+.stat-card--c1 {
+  background: linear-gradient(227deg, #1d4e8c 0%, #163b6e 100%);
+}
+
+/* All stat cards: decorative circles drawn with pseudo-elements. */
+.stat-card {
+  min-height: 150px;
+  border: 0;
+  box-shadow: 0 4px 6px rgba(15, 23, 42, 0.07), 0 2px 4px rgba(15, 23, 42, 0.04);
+}
+
+.stat-card .card-circle-decoration {
+  display: none;
+}
+
+.stat-card::before,
+.stat-card::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.stat-card::before {
+  width: 64px;
+  height: 64px;
+  top: -10px;
+  right: -10px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.stat-card::after {
+  width: 96px;
+  height: 96px;
+  top: -22px;
+  right: -22px;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+@media (hover: hover) {
+  .stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px rgba(15, 23, 42, 0.08), 0 4px 6px rgba(15, 23, 42, 0.04);
+  }
+}
+.metric-card--teal,
+.stat-card--c2 {
+  background: linear-gradient(227deg, rgb(14, 112, 96) 0%, rgb(9, 87, 73) 100%);
+}
+.metric-card--purple,
+.stat-card--c3 {
+  background: linear-gradient(227deg, #5b2d91 0%, #43206d 100%);
+}
+.metric-card--red,
+.stat-card--c4 {
+  background: linear-gradient(227deg, #b83a26 0%, #922e1d 100%);
+}
+.metric-card--gold,
+.stat-card--c5 {
+  background: linear-gradient(227deg, #8a6012 0%, #6c4b0e 100%);
+}
+
+.card-circle-decoration {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.card-circle-decoration.big {
+  width: 96px;
+  height: 96px;
+  top: -22px;
+  right: -22px;
+  background-color: rgba(255, 255, 255, 0.22);
+}
+
+.card-circle-decoration.small {
+  width: 64px;
+  height: 64px;
+  top: -10px;
+  right: -10px;
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.metric-card__body {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 0 0 112px;
+  height: 112px;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.metric-card__title {
+  margin: 0 0 9px 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: #ffffffbf;
+}
+
+.metric-card__count {
+  margin: 0 0 9px 0;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+}
+
+.metric-card__subtitle {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #ffffffb3;
+}
+
+.metric-card__action {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6px;
+  flex: 0 0 41px;
+  width: 100%;
+  height: 41px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 0 0 var(--radius-xl, 12px) var(--radius-xl, 12px);
+  background-color: #00000040;
+  color: #ffffffd9;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.metric-card__action:hover,
+.metric-card__action:focus-visible {
+  color: #fff;
+  background: #00000073;
+  background-color: rgba(0, 0, 0, 0.45);
+  text-decoration: none;
+  text-decoration-line: none;
+}
+
+.metric-card__action:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -2px;
+  border-radius: 0 0 var(--radius-xl, 12px) var(--radius-xl, 12px);
+}
+
+.metric-card__arrow {
+  display: inline-block;
+}

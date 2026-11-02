@@ -1,0 +1,167 @@
+{
+  "version": "1.0",
+  "appId": "6afc18df-9743-459d-ad11-5be8c9b5eabc",
+  "appDisplayName": "Auditverse-Reference",
+  "region": "prod",
+  "appType": "CodeApp",
+  "environmentId": "2da25865-300b-e6a5-9258-f8e6974fcc14",
+  "description": " ",
+  "buildPath": "./dist",
+  "buildEntryPoint": "index.html",
+  "localAppUrl": "http://localhost:3005",
+  "logoPath": "Default",
+  "connectionReferences": {
+    "107b80a4-021d-4534-9fca-1a252583b20c": {
+      "id": "/providers/Microsoft.PowerApps/apis/shared_logicflows",
+      "displayName": "Logic flows",
+      "dataSources": [
+        "getsharepointfolders"
+      ],
+      "workflowDetails": {
+        "workflowEntityId": "d190073e-c2b4-f111-aaac-7ced8d3d19a3",
+        "workflowDisplayName": "GetSharePointFolders",
+        "workflowName": "35728b09-a52c-437d-a86c-b765487e2091"
+      }
+    },
+    "9fec7a1d-ed13-41f8-a9a4-5dab2938f86a": {
+      "id": "/providers/Microsoft.PowerApps/apis/shared_logicflows",
+      "displayName": "Logic flows",
+      "dataSources": [
+        "getsharepointlibraries"
+      ],
+      "workflowDetails": {
+        "workflowEntityId": "24fa662f-b6b4-f111-aaac-7ced8d3d5910",
+        "workflowDisplayName": "GetSharePointLibraries",
+        "workflowName": "264130a9-32ad-4711-8372-17874bc291ca"
+      }
+    },
+    "c6950f53-17c6-4135-8b7b-972deba412b9": {
+      "id": "/providers/Microsoft.PowerApps/apis/shared_logicflows",
+      "displayName": "Logic flows",
+      "dataSources": [
+        "auditversereferencesearch"
+      ],
+      "workflowDetails": {
+        "workflowEntityId": "b9fb33ed-02c6-f111-aaad-70a8a59c33fc",
+        "workflowDisplayName": "AuditVerse Reference Search",
+        "workflowName": "b9fb33ed-02c6-f111-aaad-70a8a59c33fc"
+      }
+    },
+    "107ea361-0c0e-45d6-a5ba-136200f011e4": {
+      "id": "/providers/Microsoft.PowerApps/apis/shared_azuread",
+      "displayName": "Microsoft Entra ID",
+      "dataSources": [
+        "azuread"
+      ],
+      "authenticationType": "EntraOAuth",
+      "dataSets": {}
+    }
+  },
+  "databaseReferences": {
+    "default.cds": {
+      "dataSources": {
+        "qlcategories": {
+          "entitySetName": "cp_qlcategorieses",
+          "logicalName": "cp_qlcategories",
+          "isHidden": false
+        },
+        "qlsubcategories": {
+          "entitySetName": "cp_qlsubcategorieses",
+          "logicalName": "cp_qlsubcategories",
+          "isHidden": false
+        },
+        "aboutUsCategories": {
+          "entitySetName": "cp_aboutuscategorieses",
+          "logicalName": "cp_aboutuscategories",
+          "isHidden": false
+        },
+        "aboutUsSubcategories": {
+          "entitySetName": "cp_aboutussubcategorieses",
+          "logicalName": "cp_aboutussubcategories",
+          "isHidden": false
+        },
+        "aboutUsLeadershipDetails": {
+          "entitySetName": "cp_aboutusleadershipdetailses",
+          "logicalName": "cp_aboutusleadershipdetails",
+          "isHidden": false
+        },
+        "aboutUsContactTeamDetails": {
+          "entitySetName": "cp_aboutuscontactteamdetailses",
+          "logicalName": "cp_aboutuscontactteamdetails",
+          "isHidden": false
+        },
+        "aboutUsTextImageBlocks": {
+          "entitySetName": "cp_aboutustextimaegeblockses",
+          "logicalName": "cp_aboutustextimaegeblocks",
+          "isHidden": false
+        },
+        "qlmasters": {
+          "entitySetName": "cp_qlmasterses",
+          "logicalName": "cp_qlmasters",
+          "isHidden": false
+        },
+        "refcategories": {
+          "entitySetName": "cp_refcategorieses",
+          "logicalName": "cp_refcategories",
+          "isHidden": false
+        },
+        "refsubcategories": {
+          "entitySetName": "cp_refsubcategorieses",
+          "logicalName": "cp_refsubcategories",
+          "isHidden": false
+        },
+        "refmasters": {
+          "entitySetName": "cp_refmasterses",
+          "logicalName": "cp_refmasters",
+          "isHidden": false
+        },
+        "refitems": {
+          "entitySetName": "cp_refitemses",
+          "logicalName": "cp_refitems",
+          "isHidden": false
+        },
+        "refsites": {
+          "entitySetName": "cp_refsiteses",
+          "logicalName": "cp_refsites",
+          "isHidden": false
+        },
+        "aboutUsParents": {
+          "entitySetName": "ca_about_us_parentses",
+          "logicalName": "ca_about_us_parents",
+          "isHidden": false
+        },
+        "aboutUsChildren": {
+          "entitySetName": "ca_about_us_childrenes",
+          "logicalName": "ca_about_us_children",
+          "isHidden": false
+        },
+        "aboutUsChildImagesTexts": {
+          "entitySetName": "ca_about_us_child_imagestextses",
+          "logicalName": "ca_about_us_child_imagestexts",
+          "isHidden": false
+        },
+        "aboutUsContactTeams": {
+          "entitySetName": "ca_about_us_contact_teamses",
+          "logicalName": "ca_about_us_contact_teams",
+          "isHidden": false
+        },
+        "systemUsers": {
+          "entitySetName": "systemusers",
+          "logicalName": "systemuser",
+          "isHidden": false
+        },
+        "environmentVariableDefinitions": {
+          "entitySetName": "environmentvariabledefinitions",
+          "logicalName": "environmentvariabledefinition",
+          "isHidden": false
+        },
+        "environmentVariableValues": {
+          "entitySetName": "environmentvariablevalues",
+          "logicalName": "environmentvariablevalue",
+          "isHidden": false
+        }
+      },
+      "environmentVariableName": ""
+    }
+  }
+}

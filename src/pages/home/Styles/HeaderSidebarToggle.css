@@ -1,0 +1,35 @@
+.header-sidebar-toggle-host {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.navbar__sidebar-toggle {
+  width: 36px;
+  height: 36px;
+  color: #6e6259;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  transition: background var(--transition-fast, 0.15s), color var(--transition-fast, 0.15s);
+  transition-behavior: normal, normal;
+  transition-duration: 0.15s, 0.15s;
+  transition-timing-function: ease, ease;
+  transition-delay: 0s, 0s;
+  transition-property: background, color;
+}
+
+.navbar__sidebar-toggle:hover {
+  color: #312c2a;
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.navbar__sidebar-toggle:focus-visible {
+  outline: 2px solid #eb1700;
+  outline-offset: 1px;
+}

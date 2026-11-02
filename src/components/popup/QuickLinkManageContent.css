@@ -1,0 +1,711 @@
+.quick-link-manage-card {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  min-height: 383px;
+  background: #ffffff;
+  border: 1px solid #d8d2cd;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================================
+   NOTIFICATION
+   ========================================================= */
+
+.quick-link-manage-notification {
+  margin-bottom: 12px;
+  padding: 8px 14px;
+  border: 1px solid #fca5a5;
+  border-radius: 6px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 13px;
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+
+/* Toast Notification Region Positioning */
+.toast-region {
+  position: fixed !important;
+  bottom: 24px !important;
+  top: auto !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 9999 !important;
+  display: flex !important;
+  justify-content: center !important;
+  pointer-events: none !important;
+}
+
+/* Dark Pill Warning Container */
+.toast-pill.warning-toast {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  padding: 8px 20px 8px 14px !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3) !important;
+  font-family: inherit !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  pointer-events: auto !important;
+  animation: toastFadeIn 0.2s ease-out !important;
+}
+
+/* Blue / Cyan Info Icon */
+.toast-pill.warning-toast .toast-icon {
+  color: #00a3ff !important;
+  stroke: #00a3ff !important;
+  flex-shrink: 0 !important;
+}
+
+/* White Toast Label */
+.toast-message,
+.toast-pill .toast-message,
+.toast-pill.warning-toast .toast-message,
+.toast-pill.warning-toast span,
+.toast-pill.warning-toast {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  white-space: nowrap !important;
+}
+
+@keyframes toastFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quick-link-add-inline-alert {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.quick-link-manage-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.quick-link-manage-header h2 {
+  margin: 0;
+  color: rgb(49, 44, 42);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.quick-link-manage-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.quick-link-manage-header-actions button {
+  min-height: 25px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 10px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.quick-link-manage-cancel {
+  border: 1px solid #d8d2cd;
+  background: #ffffff;
+  color: rgb(49, 44, 42);
+  transition: background-color 0.15s ease;
+}
+
+.quick-link-manage-cancel:hover {
+  background: #f9fafb;
+}
+
+.quick-link-manage-save {
+  border: 1px solid #ed1b24;
+  background: #ed1b24;
+  color: #ffffff;
+  transition: background-color 0.15s ease;
+}
+
+.quick-link-manage-save:hover {
+  background: #c81400;
+}
+
+.quick-link-manage-header-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   SUBCATEGORY / DESCRIPTION
+   ========================================================= */
+
+.quick-link-manage-field {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.quick-link-manage-field input,
+.quick-link-manage-field textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  border: 1px solid #dedbd8;
+  border-radius: 4px;
+  box-shadow: none;
+
+  outline: 0;
+  padding: 6px 8px;
+
+  background: #ffffff;
+  color: rgb(49, 44, 42);
+
+  font-size: 10px;
+}
+
+.quick-link-manage-field input {
+  height: 28px;
+}
+
+.quick-link-manage-field textarea {
+  min-height: 42px;
+  resize: vertical;
+  line-height: 1.35;
+}
+
+.quick-link-manage-field input:focus,
+.quick-link-manage-field input:active,
+.quick-link-manage-field textarea:focus,
+.quick-link-manage-field textarea:active {
+  border-color: #fca5a5 !important;
+  box-shadow: 0 0 0 3px #eb170014 !important;
+}
+
+/* =========================================================
+   ADD ITEMS
+   ========================================================= */
+
+.quick-link-manage-add-heading {
+  margin: 15px 0 7px;
+
+  color: #222222;
+
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.quick-link-manage-add-row {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 12px;
+
+  box-sizing: border-box;
+}
+
+.quick-link-manage-add-row input {
+  height: 28px;
+  min-width: 0;
+
+  box-sizing: border-box;
+
+  border: 1px solid #dedbd8;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10);
+
+  outline: 0;
+
+  padding: 5px 8px;
+
+  background: #ffffff;
+  color: #333333;
+
+  font-size: 10px;
+  line-height: 16px;
+}
+
+.quick-link-manage-add-row input:first-child {
+  flex: 1;
+}
+
+.quick-link-manage-add-row input:nth-child(2) {
+  flex: 1.35;
+}
+
+.quick-link-manage-add-row input:focus,
+.quick-link-manage-add-row input:active {
+  border-color: #fca5a5 !important;
+  box-shadow: 0 0 0 3px #eb170014 !important;
+}
+
+/* =========================================================
+   ADD BUTTON
+   ========================================================= */
+
+.quick-link-manage-add-button {
+  flex: 0 0 42px;
+
+  width: 42px;
+  height: 28px;
+  min-height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+
+  border: 1px solid #ed1b24;
+  border-radius: 4px;
+
+  background: #ed1b24;
+  color: #ffffff;
+
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1;
+
+  text-align: center;
+
+  cursor: pointer;
+}
+
+.quick-link-manage-add-button:hover:not(:disabled) {
+  background: #d9161f;
+  border-color: #d9161f;
+}
+
+.quick-link-manage-add-button:disabled {
+  opacity: 0.45 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+}
+
+/* =========================================================
+   GALLERY CONTAINER
+   ========================================================= */
+
+.quick-link-manage-items {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 0;
+
+  box-sizing: border-box;
+
+  border: 1px solid #e8e6e3;
+  border-radius: 4px;
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   GALLERY ROW
+   ========================================================= */
+
+.quick-link-manage-item {
+  width: 100%;
+
+  height: 44px;
+  min-height: 44px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    94px;
+
+  align-items: center;
+
+  box-sizing: border-box;
+
+  padding: 0 10px;
+
+  border: 0;
+  border-bottom: 1px solid #e8e6e3;
+
+  background: #ffffff;
+
+  font-size: 10px;
+}
+
+.quick-link-manage-item:last-child {
+  border-bottom: 0;
+}
+
+.quick-link-manage-item:hover {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+/* =========================================================
+   GALLERY LINK NAME
+   ========================================================= */
+
+.quick-link-manage-item-name {
+  width: 100%;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  overflow: hidden;
+
+  color: #312c2a;
+
+  font-size: 10px;
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+.quick-link-gallery-link-icon {
+  width: 14px;
+  height: 14px;
+
+  flex: 0 0 14px;
+
+  display: block;
+
+  color: #6e6259;
+  stroke: #6e6259;
+}
+
+.quick-link-manage-item-name span {
+  min-width: 0;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #312c2a;
+}
+
+/* =========================================================
+   GALLERY ACTION AREA
+   ========================================================= */
+
+.quick-link-manage-item-actions {
+  width: auto;
+  height: 34px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 8px;
+  flex-shrink: 0;
+
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   GALLERY ACTION BUTTONS
+   ========================================================= */
+
+.quick-link-manage-item-actions button {
+  width: 26px;
+  height: 26px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+
+  border: 1px solid transparent;
+  border-radius: 4px;
+  outline: 0;
+
+  background: transparent;
+
+  color: #6e6259;
+
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.quick-link-manage-item-actions svg {
+  display: block;
+
+  width: 14px;
+  height: 14px;
+
+  margin: 0;
+  padding: 0;
+
+  flex-shrink: 0;
+}
+
+.quick-link-manage-item-actions .quick-link-manage-delete-button svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* =========================================================
+   EDIT
+   ========================================================= */
+
+.quick-link-manage-edit-button {
+  color: #6e6259;
+}
+
+/* =========================================================
+   UP / DOWN
+   ========================================================= */
+
+.quick-link-manage-move-button {
+  color: #6e6259;
+}
+
+.quick-link-manage-move-button:disabled {
+  color: #d5cfc9 !important;
+  stroke: #d5cfc9 !important;
+  border-color: transparent !important;
+  opacity: 1 !important;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   DELETE
+   ========================================================= */
+
+.quick-link-manage-delete-button {
+  color: #eb1700 !important;
+}
+
+/* =========================================================
+   HOVER STATE FOR ACTION ICONS
+   ========================================================= */
+
+.quick-link-manage-item-actions button:hover:not(:disabled) {
+  border: 1px solid #d5cfc9 !important;
+  color: #eb1700 !important;
+  background-color: transparent !important;
+}
+
+.quick-link-manage-item-actions button:hover:not(:disabled) svg {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+}
+
+/* =========================================================
+   EDIT MODE
+   ========================================================= */
+
+.quick-link-manage-item-editing {
+  width: 100%;
+
+  min-height: 38px;
+  height: 38px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1.35fr)
+    57px;
+
+  align-items: center;
+
+  box-sizing: border-box;
+
+  padding: 5px;
+
+  background: #ffffff;
+}
+
+.quick-link-manage-item.quick-link-manage-item-editing input {
+  width: 100%;
+
+  height: 27px;
+  min-width: 0;
+
+  box-sizing: border-box;
+
+  border: 1px solid #d5cfc9;
+  border-radius: 4px;
+  box-shadow: none;
+
+  outline: 0;
+
+  padding: 6px 8px;
+
+  background: #ffffff;
+  color: rgb(49, 44, 42);
+
+  font-size: 10px;
+}
+
+.quick-link-manage-item.quick-link-manage-item-editing input:hover:not(:focus),
+.quick-link-manage-item-editing input:hover:not(:focus) {
+  border-color: #d5cfc9 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.quick-link-manage-item.quick-link-manage-item-editing input:focus,
+.quick-link-manage-item.quick-link-manage-item-editing input:focus:hover,
+.quick-link-manage-item.quick-link-manage-item-editing input:active,
+.quick-link-manage-item.quick-link-manage-item-editing input:focus-visible,
+.quick-link-manage-item-editing input:focus,
+.quick-link-manage-item-editing input:focus:hover,
+.quick-link-manage-item-editing input:active,
+.quick-link-manage-item-editing input:focus-visible {
+  border-color: #fca5a5 !important;
+  box-shadow: 0 0 0 3px #eb170014 !important;
+  outline: none !important;
+}
+
+
+
+/* =========================================================
+   EDIT ACTIONS
+   ========================================================= */
+
+.quick-link-edit-actions {
+  width: 57px;
+  height: 27px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 5px;
+
+  box-sizing: border-box;
+}
+
+.quick-link-edit-actions button {
+  width: 26px;
+  height: 26px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+  border-radius: 4px;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.quick-link-edit-actions svg {
+  display: block;
+
+  width: 17px;
+  height: 17px;
+}
+
+/* =========================================================
+   RED X
+   ========================================================= */
+
+.quick-link-edit-cancel-button {
+  color: #ed1b24;
+}
+
+.quick-link-edit-cancel-button:hover {
+  color: #c9151d;
+}
+
+/* =========================================================
+   GREEN CHECK
+   ========================================================= */
+
+.quick-link-edit-confirm-button {
+  color: #2e8b57;
+}
+
+.quick-link-edit-confirm-button:hover {
+  color: #247047;
+}
+
+/* =========================================================
+   GENERAL ICON
+   ========================================================= */
+
+.quick-link-manage-icon {
+  display: block;
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .quick-link-manage-add-row {
+    flex-wrap: wrap;
+  }
+
+  .quick-link-manage-add-row input:first-child,
+  .quick-link-manage-add-row input:nth-child(2) {
+    flex: 1 1 100%;
+  }
+
+  .quick-link-manage-add-button {
+    flex: 0 0 42px;
+    margin-left: auto;
+  }
+
+  .quick-link-manage-item {
+    grid-template-columns:
+      minmax(0, 1fr)
+      94px;
+  }
+
+  .quick-link-manage-item-editing {
+    height: auto;
+    min-height: 38px;
+
+    grid-template-columns:
+      minmax(0, 1fr);
+
+    gap: 5px;
+  }
+
+  .quick-link-edit-actions {
+    margin-left: auto;
+  }
+}

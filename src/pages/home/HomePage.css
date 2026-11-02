@@ -1,0 +1,4910 @@
+/* ==========================================================================
+   AUDIT VERSE - GA&A REFERENCES STYLES
+   ========================================================================== */
+
+:root {
+  --primary-red: #D51900;
+  --primary-red-hover: #B81500;
+  --primary-red-light: #FEF2F2;
+  --primary-red-border: #FCA5A5;
+
+  --color-primary: #EB1700;
+  --color-primary-rgb: 235, 23, 0;
+  --color-primary-light: #FEF2F1;
+  --color-primary-border: #FCA5A5;
+  --color-text: #112C2A;
+  --color-text-secondary: #6C6259;
+  --color-bg-white: #FFFFFF;
+  --color-border: #D5CFC9;
+  --color-border-hover: #D1D5DB;
+  --color-bg-subtle: #F9FAFB;
+  --space-2: 8px;
+  --radius-lg: 8px;
+
+  --bg-base: #F5F6F8;
+  --surface-card: #FFFFFF;
+
+  --navy-dark: #0B132B;
+  --navy-light: #1C2541;
+
+  --border-subtle: #E5E7EB;
+  --border-light: #E2E8F0;
+
+  --text-primary: #111827;
+  --text-secondary: #6B7280;
+  --text-muted: #9CA3AF;
+
+  --font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Base App Shell */
+.app-shell {
+  min-height: 100vh;
+  background-color: var(--bg-base);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-family: var(--font-family);
+  color: var(--text-primary);
+}
+
+/* References screen: AboutUsPage.css globally locks .app-shell to 100vh with
+   overflow hidden; restore normal page scrolling here. */
+.app-shell:has(> .page-main) {
+  height: auto;
+  min-height: 100vh;
+  overflow: visible;
+}
+
+/* ==========================================================================
+   1. TOP NAVIGATION BAR (Height ~56px, White Background)
+   ========================================================================== */
+
+header.navbar,
+header.top-navigation,
+.top-navigation {
+  min-height: 51px;
+  height: 51px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E5E7EB;
+  padding: 0 16px 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Brand Lockup: Johnson & Johnson logo | Audit Verse */
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-shrink: 0;
+}
+
+.jj-brand-logo {
+  height: 20px;
+  max-height: 24px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-divider {
+  color: #D1D5DB;
+  font-size: 16px;
+  font-weight: 300;
+  user-select: none;
+  margin: 0 12px;
+}
+
+.product-name {
+  color: #312c2a;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+}
+
+/* Navigation Links */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 100%;
+  margin-left: 20px;
+  margin-right: 0;
+  flex: none;
+  justify-content: flex-start;
+}
+
+.nav-item {
+  height: 100%;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 14px;
+  font-weight: normal;
+  color: #6e6259;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  box-sizing: border-box;
+  border-radius: 6px 6px 0 0;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-item .nav-item-text {
+  color: #6e6259;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.nav-item:hover,
+.nav-item.nav-dropdown-trigger:hover,
+.nav-dropdown-wrapper:hover .nav-dropdown-trigger {
+  color: #312c2a;
+  background-color: #0000000d;
+  background-image: initial;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 6px 6px 0 0;
+}
+
+.nav-item:hover .nav-item-text,
+.nav-item.nav-dropdown-trigger:hover .nav-item-text,
+.nav-dropdown-wrapper:hover .nav-dropdown-trigger .nav-item-text {
+  color: #312c2a;
+}
+
+.nav-item.active {
+  background-color: #fef2f1;
+  color: #eb1700;
+  font-weight: 700;
+  border-radius: 6px 6px 0 0;
+}
+
+.nav-item.active .nav-item-text {
+  color: #eb1700;
+  font-weight: 700;
+}
+
+.nav-item.active:hover {
+  background-color: #fef2f1;
+  color: #eb1700;
+}
+
+.nav-item.active:hover .nav-item-text {
+  color: #eb1700;
+  font-weight: 700;
+}
+
+.nav-active-bar {
+  background-color: #eb1700;
+  height: 3px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 20px);
+  border-radius: 2px 2px 0 0;
+  pointer-events: none;
+}
+
+/* "My Applications" Dropdown Wrapper & Menu */
+.nav-dropdown-wrapper {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-chevron {
+  transition: transform 0.2s ease;
+  margin-left: 2px;
+}
+
+.dropdown-chevron.open {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu,
+.my-apps-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding: 6px 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-dropdown-item,
+.my-apps-dropdown .dropdown-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 400;
+  color: #374151;
+  background-color: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Hover: Light red background + red text */
+.nav-dropdown-item:hover,
+.my-apps-dropdown .dropdown-item:hover {
+  background-color: #fef2f1;
+  color: #eb1700;
+  font-weight: 500;
+}
+
+/* Dropdown Item Tooltip */
+.nav-dropdown-item .item-tooltip,
+.my-apps-dropdown .dropdown-item .item-tooltip {
+  display: none;
+  position: absolute;
+  left: 85px;
+  top: 18px;
+  background-color: #ffffff;
+  color: #111827;
+  font-size: 11px;
+  font-weight: 400;
+  white-space: nowrap;
+  padding: 2px 6px;
+  border: 1px solid #111827;
+  border-radius: 0px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  z-index: 1100;
+  pointer-events: none;
+}
+
+/* Show tooltip on hover */
+.nav-dropdown-item:hover .item-tooltip,
+.my-apps-dropdown .dropdown-item:hover .item-tooltip {
+  display: block;
+}
+
+/* Right Utility Icons & Avatar */
+.nav-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.nav-util-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #eb1700;
+  position: relative;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.nav-util-btn svg {
+  width: 18px;
+  height: 18px;
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+  display: block;
+}
+
+.nav-util-btn:hover {
+  background-color: rgba(var(--color-primary-rgb), .2);
+  background-image: initial;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-repeat: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: rgba(235, 23, 0, 0.2);
+}
+
+.nav-util-btn.selected {
+  background-color: #fca5a5;
+  border: 1px solid #fca5a5;
+  color: #eb1700;
+}
+
+.nav-util-btn.selected:hover {
+  background-color: #fca5a5;
+}
+
+/* User Role & Group Badge Container */
+.user-role-badge-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.user-role-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 12px;
+  white-space: nowrap;
+  letter-spacing: 0.2px;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.user-role-badge.role-admin {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+}
+
+.user-role-badge.role-content_manager {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+}
+
+.user-role-badge.role-user {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
+}
+
+.user-role-select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+/* User Avatar — Account (Non-Clickable / Info Only) */
+.user-avatar-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  margin-left: 2px;
+}
+
+.user-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #EB1700;
+  color: #FFFFFF;
+  font-weight: 600;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  border: none;
+  user-select: none;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   CUSTOM UNIFIED NAVIGATION TOOLTIP SYSTEM
+   ========================================================================== */
+
+/* Tooltip wrapper on hoverable items */
+.has-nav-tooltip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tooltip popup box matching reference screenshots */
+.nav-tooltip,
+.nav-tooltip-box,
+.has-nav-tooltip .nav-tooltip-box {
+  position: absolute;
+  top: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #FFFFFF;
+  color: #111827;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.2;
+  white-space: nowrap;
+  padding: 4px 8px;
+  border: 1px solid #111827;
+  border-radius: 0px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
+}
+
+/* Navigating screens tooltip: Half of the header and half after header, starting at middle of tab, shifted slightly downward */
+.nav-item .nav-tooltip,
+.nav-item .nav-tooltip-box,
+.main-nav .nav-item .nav-tooltip,
+.main-nav .nav-item .nav-tooltip-box {
+  top: calc(100% + 4px);
+  left: 50%;
+  transform: translateY(-50%);
+}
+
+/* Right utility icons (three icons): horizontally aligned starting at middle (left: 50%) like screen tabs */
+.nav-util-btn .nav-tooltip,
+.nav-util-btn .nav-tooltip-box {
+  left: 50%;
+  transform: none;
+}
+
+/* Show on hover */
+.has-nav-tooltip:hover .nav-tooltip,
+.has-nav-tooltip:hover .nav-tooltip-box,
+.nav-item:hover .nav-tooltip,
+.nav-item:hover .nav-tooltip-box,
+.nav-util-btn:hover .nav-tooltip,
+.nav-util-btn:hover .nav-tooltip-box,
+.user-avatar-wrap:hover .nav-tooltip,
+.user-avatar-wrap:hover .nav-tooltip-box {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Specific right-edge alignment for User Avatar so text is fully visible */
+.nav-user-avatar .nav-tooltip,
+.nav-user-avatar .nav-tooltip-box,
+.nav-user-avatar.has-nav-tooltip .nav-tooltip-box,
+.user-avatar-wrap .nav-tooltip,
+.user-avatar-wrap .nav-tooltip-box {
+  left: auto;
+  right: 0;
+  transform: none;
+}
+
+/* User Role Badge & Tester Switcher */
+.user-role-badge-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+}
+
+.user-role-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 12px;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.user-role-badge.role-admin {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fca5a5;
+}
+
+.user-role-badge.role-content_manager {
+  background-color: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+}
+
+.user-role-badge.role-user {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
+}
+
+.user-role-select {
+  font-size: 11px;
+  height: 24px;
+  padding: 0 6px;
+  border: 1px solid #d5cfc9;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #312c2a;
+  cursor: pointer;
+  outline: none;
+}
+
+.user-role-select:focus {
+  border-color: #eb1700;
+}
+
+/* Blank page body for Home, Audit Focus, About Us */
+.blank-page-body {
+  flex: 1;
+  min-height: calc(100vh - 51px);
+  background-color: #FFFFFF;
+  width: 100%;
+}
+
+/* ==========================================================================
+   2. HERO/BANNER AREA (Dark Navy Gradient, Height ~160px)
+   ========================================================================== */
+
+.hero-banner {
+  height: 160px;
+  min-height: 160px;
+  max-height: 160px;
+  width: 100%;
+  background: linear-gradient(135deg, #0B132B 0%, #151E38 60%, #1C2541 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 0 32px 14px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.network-pattern-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.hero-kicker {
+  color: var(--primary-red);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin: 0 0 4px 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-align: left;
+}
+
+.kicker-dash {
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-title {
+  color: #FFFFFF;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 2px 0 6px 0;
+  padding: 0;
+  text-align: left;
+}
+
+.hero-subtitle {
+  color: #CBD5E1;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* ==========================================================================
+   3. FLOATING SEARCH BAR CONTAINER
+   ========================================================================== */
+
+.page-content,
+.page-main {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0 0 48px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.search-with-clear {
+  position: relative;
+  margin-top: 27px;
+  margin-bottom: 0;
+  z-index: 10;
+  width: 100%;
+  max-width: 100%;
+  padding: 0 32px;
+  box-sizing: border-box;
+}
+
+.hero-search,
+.search-bar {
+  background-color: #FFFFFF;
+  border: 1px solid #e9d4ff;
+  border-radius: 8px;
+  box-shadow: none;
+  height: 36px !important;
+  min-height: 36px !important;
+  max-height: 36px !important;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 10px 0 5px;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease;
+}
+
+.hero-search:focus-within,
+.search-bar:focus-within {
+  border-color: #d8b4fe;
+  box-shadow: none !important;
+}
+
+.hero-search__submit,
+.search-badge-btn,
+.search-icon-box {
+  background: linear-gradient(315deg, #5a0994 0%, #0f68b2 62%);
+  background-image: linear-gradient(315deg, rgb(90, 9, 148) 0%, rgb(15, 104, 178) 62%);
+  color: #FFFFFF;
+  stroke: #FFFFFF;
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.15s ease, filter 0.15s ease;
+  flex-shrink: 0;
+}
+
+.hero-search__submit:hover,
+.search-badge-btn:hover {
+  filter: brightness(1.1);
+  opacity: 0.95;
+}
+
+.hero-search__submit svg,
+.search-badge-btn svg {
+  width: 15px !important;
+  height: 15px !important;
+  color: #ffffff;
+  stroke: #ffffff;
+  display: block;
+}
+
+.hero-search__input,
+.search-input,
+.search-bar input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  font-size: 14px !important;
+  line-height: 34px;
+  height: 34px !important;
+  color: #312c2a !important;
+  background: transparent;
+  padding: 0 10px !important;
+}
+
+.hero-search__input:focus,
+.search-input:focus,
+.search-bar input:focus {
+  outline: none;
+  box-shadow: none !important;
+}
+
+.hero-search__input::placeholder,
+.search-input::placeholder,
+.search-bar input::placeholder {
+  color: #9CA3AF;
+  font-size: 14px !important;
+}
+
+.hero-search__chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px !important;
+  height: 24px !important;
+  font-size: 11px !important;
+  font-weight: 600;
+  line-height: 1;
+  color: #ffffff;
+  background: linear-gradient(315deg, #5a0994 0%, #0f68b2 62%);
+  background-image: linear-gradient(315deg, rgb(90, 9, 148) 0%, rgb(15, 104, 178) 62%);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 0.15s ease-in-out, filter 0.15s ease-in-out;
+  white-space: nowrap;
+}
+
+.hero-search__chip:hover {
+  filter: brightness(1.1);
+  opacity: 0.95;
+}
+
+.ai-badge-btn,
+.ai-button {
+  background: linear-gradient(315deg, #5a0994 0%, #0f68b2 62%);
+  background-image: linear-gradient(315deg, rgb(90, 9, 148) 0%, rgb(15, 104, 178) 62%);
+  color: #FFFFFF;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s ease-in-out, filter 0.15s ease-in-out;
+  white-space: nowrap;
+  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ai-badge-btn:hover,
+.ai-button:hover {
+  filter: brightness(1.1);
+  opacity: 0.95;
+}
+
+.search-clear-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 24px;
+  padding: 0 8px;
+  box-sizing: border-box;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border: 1px solid #d5cfc9 !important;
+  border-color: #d5cfc9 !important;
+  border-radius: 12px;
+  background-color: #FFFFFF !important;
+  color: #6e6259 !important;
+  font-size: 12px !important;
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.search-clear-button .search-clear-icon,
+.search-clear-button .search-clear-text {
+  color: inherit !important;
+  font-size: 12px !important;
+}
+
+.search-clear-button .search-clear-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  flex-shrink: 0 !important;
+  font-size: 14px !important;
+}
+
+.search-clear-button .search-clear-icon svg {
+  width: 13px !important;
+  height: 13px !important;
+  stroke-width: 2.5 !important;
+  stroke: currentColor !important;
+  display: block !important;
+}
+
+.search-clear-button:hover {
+  border-color: #fca5a5 !important;
+  color: #eb1700 !important;
+  background-color: #FFFFFF !important;
+  background: #FFFFFF !important;
+}
+
+.search-clear-button:focus,
+.search-clear-button:focus-visible,
+.search-clear-button:active,
+.search-clear-button:hover:active,
+.search-clear-button:hover:focus {
+  border: 1px solid #fca5a5 !important;
+  border-color: #fca5a5 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Clear search button tooltip: aligned middle towards right */
+.search-clear-button .nav-tooltip,
+.search-clear-button .nav-tooltip-box {
+  position: absolute;
+  top: calc(100% + 4px) !important;
+  left: 50% !important;
+  transform: none !important;
+  background-color: #FFFFFF !important;
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+  padding: 4px 8px !important;
+  border: 1px solid #111827 !important;
+  border-radius: 0px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) !important;
+  z-index: 1002 !important;
+  pointer-events: none !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
+}
+
+.search-clear-button:hover .nav-tooltip,
+.search-clear-button:hover .nav-tooltip-box,
+.search-clear-button.has-nav-tooltip:hover .nav-tooltip,
+.search-clear-button.has-nav-tooltip:hover .nav-tooltip-box {
+  opacity: 1 !important;
+  visibility: visible !important;
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+  background-color: #FFFFFF !important;
+  border: 1px solid #111827 !important;
+}
+
+/* ==========================================================================
+   4. TWO-COLUMN MAIN LAYOUT
+   ========================================================================== */
+
+.content-layout,
+div.about-layout,
+div.page-main,
+.page-main .content-layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 100%;
+  gap: 24px;
+  padding: 24px 32px;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   5. LEFT SIDEBAR (320px Fixed Width)
+   ========================================================================== */
+
+/* ==========================================================================
+   5. LEFT SIDEBAR (nav.section-nav - 340px Fixed Width)
+   ========================================================================== */
+
+nav.section-nav,
+.sidebar-card,
+.sidebar-card-container {
+  width: 340px;
+  min-width: 340px;
+  flex: 0 0 340px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 16px;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  padding: 12px 14px;
+  box-sizing: border-box;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.sidebar-tree {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sidebar-section-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.sidebar-divider {
+  height: 1px;
+  background: #E5E7EB;
+  margin: 12px 0;
+  border: none;
+  width: 100%;
+}
+
+/* Section Header (QUICK LINKS, REFERENCES) */
+.sidebar-section-header {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.sidebar-section-header .sidebar-row-content {
+  height: 38px;
+  padding: 0 8px;
+  cursor: pointer;
+}
+
+.sidebar-section-header > .sidebar-row-content:hover,
+.sidebar-node-heading > .sidebar-row-content:hover {
+  background-color: #f9f8f7 !important;
+}
+
+.sidebar-section-header > .sidebar-row-content:hover .sidebar-node-label,
+.sidebar-node-heading > .sidebar-row-content:hover .sidebar-node-label {
+  color: #6e6259 !important;
+}
+
+.sidebar-section-header > .sidebar-row-content:hover .sidebar-chevron-indicator,
+.sidebar-section-header > .sidebar-row-content:hover .sidebar-chevron-indicator svg,
+.sidebar-section-header > .sidebar-row-content:hover .sidebar-chevron-indicator .icon,
+.sidebar-node-heading > .sidebar-row-content:hover .sidebar-chevron-indicator,
+.sidebar-node-heading > .sidebar-row-content:hover .sidebar-chevron-indicator svg,
+.sidebar-node-heading > .sidebar-row-content:hover .sidebar-chevron-indicator .icon {
+  color: #6e6259 !important;
+  stroke: #6e6259 !important;
+}
+
+.sidebar-section-header > .sidebar-row-content .sidebar-node-label,
+.sidebar-node-heading > .sidebar-row-content .sidebar-node-label {
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  color: #6e6259 !important;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Generic Sidebar Row Content */
+.sidebar-row-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 38px;
+  padding: 0 8px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 1px 0;
+  position: relative;
+  transition: background-color 0.12s ease;
+  user-select: none;
+}
+
+.sidebar-row-content:hover {
+  background-color: transparent;
+}
+
+/* Category Hover: show before MANAGE only */
+.sidebar-node-category > .sidebar-row-content {
+  background-color: transparent;
+}
+
+.sidebar-node-category > .sidebar-row-content:hover {
+  background-color: transparent !important;
+}
+
+.sidebar-node-category > .sidebar-row-content .sidebar-row-left {
+  align-self: stretch;
+  height: 100%;
+  padding-left: 6px;
+  margin-left: -6px;
+  padding-right: 6px;
+  border-radius: 4px;
+  transition: background-color 0.12s ease;
+}
+
+.sidebar-node-category > .sidebar-row-content:hover .sidebar-row-left {
+  background-color: #f9f8f7;
+}
+
+.sidebar-node-category > .sidebar-row-content:has(.sidebar-manage-btn:hover) .sidebar-row-left {
+  background-color: transparent !important;
+}
+
+/* Subcategory: height 37px, stops where MANAGE ends on category above */
+.sidebar-node-item > .sidebar-row-content,
+.sidebar-depth-2 > .sidebar-row-content {
+  width: calc(100% - 28px);
+  height: 37px;
+  min-height: 37px;
+}
+
+.sidebar-node-item > .sidebar-row-content:not(.selected):hover,
+.sidebar-depth-2 > .sidebar-row-content:not(.selected):hover {
+  background-color: #f9f8f7 !important;
+}
+
+/* Left part of row (Icon + Text) */
+.sidebar-row-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  min-width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.folder-icon {
+  color: rgb(49, 44, 42) !important;
+  stroke: rgb(49, 44, 42) !important;
+}
+
+.folder-icon svg,
+.folder-category-icon,
+.lucide-folder-symlink,
+.lucide-folder-open {
+  width: 15px;
+  height: 15px;
+  color: rgb(49, 44, 42) !important;
+  stroke: rgb(49, 44, 42) !important;
+  display: block;
+}
+
+.link-icon {
+  color: rgb(49, 44, 42);
+  stroke: rgb(49, 44, 42);
+}
+
+.active-icon {
+  color: var(--primary-red);
+}
+
+/* Node label text */
+.sidebar-node-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  font-weight: 400;
+  color: #312c2a;
+  font-family: inherit;
+  text-transform: none !important;
+}
+
+/* Category Level Items: color #312c2a, normal font weight (400) when collapsed */
+.sidebar-node-category > .sidebar-row-content .sidebar-node-label,
+.sidebar-node-category.node-collapsed > .sidebar-row-content .sidebar-node-label,
+.sidebar-node-category > .sidebar-row-content[data-expanded="false"] .sidebar-node-label,
+.sidebar-node-category > .sidebar-row-content[aria-expanded="false"] .sidebar-node-label {
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  color: #312c2a !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: none !important;
+}
+
+/* Category Level Items: semi-bold (font-weight: 600) when folder expanded */
+.sidebar-node-category.node-expanded > .sidebar-row-content .sidebar-node-label,
+.sidebar-node-category > .sidebar-row-content[data-expanded="true"] .sidebar-node-label,
+.sidebar-node-category > .sidebar-row-content[aria-expanded="true"] .sidebar-node-label {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #312c2a !important;
+  text-transform: none !important;
+}
+
+.sidebar-node-category.node-expanded > .sidebar-row-content .folder-icon,
+.sidebar-node-category.node-collapsed > .sidebar-row-content .folder-icon,
+.sidebar-node-category .folder-icon,
+.sidebar-node-category .folder-icon svg,
+.sidebar-node-category .folder-category-icon,
+.sidebar-node-category .lucide-folder-symlink,
+.sidebar-node-category .lucide-folder-open,
+.folder-category-icon,
+.lucide-folder-symlink,
+.lucide-folder-open {
+  color: rgb(49, 44, 42) !important;
+  stroke: rgb(49, 44, 42) !important;
+}
+
+/* Active State Style:
+   - Soft light-red background (#FEF2F2).
+   - Left-border vertical red indicator line (3px solid #D51900).
+   - Text color and icon color turn red (#D51900). */
+.sidebar-row-content.selected,
+.sidebar-node.is-selected > .sidebar-row-content {
+  background: #FEF2F2 !important;
+  border-left: none !important;
+  border-radius: 4px !important;
+  padding-left: 8px !important;
+  position: relative;
+}
+
+.sidebar-row-content.selected::before,
+.sidebar-node.is-selected > .sidebar-row-content::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 27px;
+  background-color: #eb1700;
+  border-radius: 1.5px;
+}
+
+.sidebar-row-content.selected .sidebar-node-label,
+.sidebar-node.is-selected > .sidebar-row-content .sidebar-node-label {
+  color: #312c2a !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+.sidebar-row-content.selected .link-icon,
+.sidebar-node.is-selected > .sidebar-row-content .link-icon {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+}
+
+.sidebar-node-item > .sidebar-row-content:not(.selected) .sidebar-node-label,
+.sidebar-depth-2 > .sidebar-row-content:not(.selected) .sidebar-node-label,
+.sidebar-node-item:not(.is-selected) .sidebar-node-label,
+.sidebar-node-children .sidebar-node-label {
+  color: #312c2a !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+  text-transform: none !important;
+}
+
+.sidebar-node-item > .sidebar-row-content .link-icon,
+.sidebar-node-item .link-icon,
+.sidebar-icon.link-icon {
+  color: rgb(49, 44, 42);
+  stroke: rgb(49, 44, 42);
+}
+
+/* Right Slot (Action Group: "MANAGE" + Chevron) */
+.sidebar-row-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.sidebar-manage-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: #eb1700 !important;
+  font-size: 12px !important;
+  font-weight: 600;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 2px 4px;
+  border-radius: 3px;
+  transition: background-color 0.12s ease;
+  line-height: 1;
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
+
+.sidebar-manage-btn:hover {
+  background-color: var(--primary-red-light);
+  text-decoration: underline !important;
+  text-decoration-color: #eb1700 !important;
+  text-underline-offset: 2px;
+}
+
+.sidebar-manage-btn:hover span {
+  text-decoration: underline !important;
+  text-decoration-color: #eb1700 !important;
+  text-underline-offset: 2px;
+}
+
+/* Right toggle chevron */
+.sidebar-chevron-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  color: rgb(110, 98, 89) !important;
+  stroke: rgb(110, 98, 89) !important;
+  font-size: 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.sidebar-chevron-indicator svg,
+.sidebar-chevron-indicator .icon,
+.sidebar-chevron-indicator .icon-chevron-down,
+.sidebar-chevron-indicator .icon-chevron-up {
+  color: rgb(110, 98, 89) !important;
+  stroke: rgb(110, 98, 89) !important;
+}
+
+/* Children indentation */
+.sidebar-node-children {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-node-category > .sidebar-node-children,
+.sidebar-depth-1 > .sidebar-node-children {
+  padding-left: 20px;
+}
+
+.sidebar-depth-2 > .sidebar-node-children {
+  padding-left: 20px;
+}
+
+/* Bottom Sidebar Footer (Admin Footer Button) */
+.sidebar-footer {
+  border-top: 1px solid #E5E7EB;
+  margin-top: 12px;
+  padding-top: 10px;
+  width: 100%;
+}
+
+.sidebar-manage-menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+  color: #eb1700;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 6px 0;
+  border-radius: 4px;
+  transition: background-color 0.15s ease;
+  line-height: 1;
+}
+
+.sidebar-manage-menu-btn:hover {
+  background-color: var(--primary-red-light);
+  text-decoration: underline !important;
+  text-decoration-color: #eb1700 !important;
+  text-underline-offset: 2px;
+}
+
+.sidebar-manage-menu-btn:hover span {
+  text-decoration: underline !important;
+  text-decoration-color: #eb1700 !important;
+  text-underline-offset: 2px;
+}
+
+/* ==========================================================================
+   6. RIGHT CONTENT PANEL (section.pane)
+   ========================================================================= */
+
+section.pane,
+.right-content-panel.pane,
+.right-content-panel,
+.resource-card {
+  flex: 1 1 0%;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  border: 1px solid var(--color-border, #d5cfc9);
+  border-radius: var(--radius-lg, 8px);
+  box-shadow: var(--shadow-xs, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
+  padding: 24px;
+  box-sizing: border-box;
+  position: relative;
+  color: rgb(49, 44, 42) !important;
+}
+
+/* 2. Panel Top Header & Breadcrumbs: Normal font weight */
+.panel-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.breadcrumb,
+.panel-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: rgb(49, 44, 42) !important;
+  font-weight: 400 !important;
+}
+
+.breadcrumb-segment {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 400 !important;
+  color: rgb(49, 44, 42) !important;
+}
+
+.breadcrumb-separator {
+  color: rgb(49, 44, 42) !important;
+  font-weight: 400 !important;
+}
+
+.breadcrumb-text {
+  color: rgb(49, 44, 42) !important;
+  font-weight: 400 !important;
+}
+
+.breadcrumb-active,
+.breadcrumb-current {
+  color: rgb(49, 44, 42) !important;
+  font-weight: 400 !important;
+}
+
+.panel-top-manage {
+  display: flex;
+  align-items: center;
+}
+
+.manage-action-btn,
+.pane-manage-btn {
+  color: #EB1700;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  line-height: 1;
+}
+
+.manage-action-btn:hover,
+.pane-manage-btn:hover {
+  opacity: 0.85;
+  text-decoration: underline !important;
+  text-decoration-color: #eb1700 !important;
+  text-underline-offset: 2px;
+}
+
+.manage-action-btn:hover span,
+.pane-manage-btn:hover span {
+  text-decoration: underline !important;
+  text-decoration-color: #eb1700 !important;
+  text-underline-offset: 2px;
+}
+
+/* Manage icon color: explicitly #eb1700 */
+.icon-manage,
+.icon-file-pen,
+svg.lucide-file-pen,
+.sidebar-manage-btn svg,
+.sidebar-manage-menu-btn svg,
+.manage-action-btn svg,
+.pane-manage-btn svg {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+  text-decoration: none !important;
+}
+
+/* Global manage hover underline with same manage color (#eb1700) */
+.manage-action-btn:hover,
+.manage-action-btn:hover span,
+.pane-manage-btn:hover,
+.pane-manage-btn:hover span,
+.sidebar-manage-btn:hover,
+.sidebar-manage-btn:hover span,
+.sidebar-manage-menu-btn:hover,
+.sidebar-manage-menu-btn:hover span,
+.panel-top-manage button:hover,
+.panel-top-manage button:hover span {
+  text-decoration: underline !important;
+  text-decoration-color: #eb1700 !important;
+  text-underline-offset: 2px;
+}
+
+/* 3. Active Category Summary Header */
+.panel-section-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.section-header-left {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: stretch;
+  gap: 14px;
+  min-width: 0;
+  flex: 1;
+}
+
+.active-section-badge-outline {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid #FEF2F1;
+  background: #FFF5F5;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #EB1700;
+  box-sizing: border-box;
+}
+
+.active-section-badge-outline svg {
+  width: 24px;
+  height: 24px;
+}
+
+.active-section-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.active-section-title,
+.panel-section-header h2,
+.pane_body .pane_object h2,
+.pane_body .pane_object h3,
+.pane_body h2.category-title {
+  font-size: 18px;
+  font-weight: 600 !important;
+  color: rgb(49, 44, 42) !important;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.active-section-subtitle {
+  font-size: 13px;
+  color: rgb(49, 44, 42) !important;
+  margin: 6px 0 0 0;
+  line-height: 1.4;
+  height: auto;
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+.section-header-right {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.add-to-widgets-btn {
+  background-color: var(--primary-red);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 9999px;
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(213, 25, 0, 0.2);
+  transition: background-color 0.15s ease, transform 0.1s ease;
+  white-space: nowrap;
+}
+
+.add-to-widgets-btn:hover {
+  background-color: var(--primary-red-hover);
+}
+
+.resources-count-heading {
+  margin-bottom: 8px;
+}
+
+.resources-count-heading h3 {
+  font-size: 16px;
+  font-weight: 400 !important;
+  color: rgb(49, 44, 42) !important;
+  margin: 0;
+}
+
+/* ==========================================================================
+   7. INNER RESOURCES LIST CONTAINER & ROWS (Default & Hover States)
+   ========================================================================== */
+
+div.pane_body,
+.pane_body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+div.res-list,
+.res-list,
+.resource-cards-list {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2, 8px);
+}
+
+.resource-card-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+/* Resource Item Card Defaults */
+.res-list .res-row,
+button.res-row,
+a.res-row,
+div.res-list .resource-card-row,
+div.res-list .res-card,
+.resource-card-row,
+.res-card,
+.pane_body .resource-card-row {
+  background-color: #f9f8f7 !important;
+  background: #f9f8f7 !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 39px;
+  min-height: 39px;
+  padding: 0 16px;
+  border: 1px solid #e8e6e3 !important;
+  border-radius: 8px;
+  box-sizing: border-box;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out !important;
+  user-select: none;
+}
+
+/* Title: Normal weight, Black */
+.res-list .res-row .res-row__label,
+.res-list .res-row span.label-text,
+.res-list .res-row .resource-card-title,
+.res-list .res-row .res-item-title,
+.resource-card-title,
+.res-item-title {
+  font-weight: 400 !important;
+  color: rgb(49, 44, 42) !important;
+  font-size: 13px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+/* Left Link Icon: Red #eb1700 */
+.res-list .res-row .res-row__icon,
+.res-list .res-row .res-row__icon svg,
+.res-list .res-row svg:first-child,
+.res-list .res-row .res-folder-icon,
+.res-list .res-row .res-link-icon,
+.res-list .res-row .resource-icon-red,
+.res-folder-icon,
+.res-link-icon {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+  flex-shrink: 0;
+}
+
+/* Right Action Icons: Grey #6e6259, 16px */
+.res-list .res-row .preview-icon,
+.res-list .res-row svg.lucide-arrow-right,
+.res-list .res-row svg.lucide-chevron-right,
+.res-list .res-row svg.lucide-star,
+.res-list .res-row svg.lucide-external-link,
+.res-list .res-row .res-row__arrow {
+  width: 16px !important;
+  height: 16px !important;
+  color: #6e6259 !important;
+  stroke: #6e6259 !important;
+  flex-shrink: 0;
+  transition: none;
+  display: block;
+}
+
+.res-list .res-row .card-action-icon-btn,
+.res-list .res-row .star-action-btn,
+.res-list .res-row .external-action-btn,
+.card-action-icon-btn,
+.star-action-btn,
+.external-action-btn {
+  width: 16px;
+  height: 16px;
+  color: #6e6259 !important;
+  stroke: #6e6259 !important;
+  flex-shrink: 0;
+}
+
+/* Count badge */
+.resource-count-badge,
+.res-count-badge {
+  color: rgb(49, 44, 42) !important;
+  font-weight: 400;
+  margin-left: 4px;
+}
+
+/* Hover State */
+.res-list .res-row:hover,
+.res-list .res-row:focus-visible,
+.res-list .resource-card-row:hover,
+.res-list .resource-card-row:focus-visible,
+.res-list .res-card:hover,
+.res-list .res-card:focus-visible,
+button.res-row:hover,
+button.res-row:focus-visible,
+a.res-row:hover,
+a.res-row:focus-visible,
+.resource-card-row:hover,
+.resource-card-row:focus-visible {
+  background-color: #fef2f1 !important;
+  border: 1px solid #fca5a5 !important;
+  outline: none;
+}
+
+.res-list .res-row:hover .res-row__label,
+.res-list .res-row:hover span.label-text,
+.res-list .res-row:hover .resource-card-title,
+.res-list .res-row:hover .res-item-title,
+.res-list .res-row:focus-visible .res-row__label,
+.res-list .res-row:focus-visible span.label-text,
+.res-list .resource-card-row:hover .res-row__label,
+.res-list .resource-card-row:hover span.label-text,
+.res-list .resource-card-row:hover .resource-card-title,
+.resource-card-row:hover .resource-card-title {
+  color: rgb(49, 44, 42) !important;
+  font-weight: 400 !important;
+}
+
+.res-list .res-row:hover .res-row__icon,
+.res-list .res-row:hover svg:first-child,
+.res-list .res-row:hover .res-row__icon svg,
+.res-list .res-row:hover .res-folder-icon,
+.res-list .res-row:hover .res-link-icon,
+.res-list .res-row:hover .resource-icon-red,
+.res-list .res-row:focus-visible .res-row__icon,
+.res-list .resource-card-row:hover .res-row__icon {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+}
+
+.res-list .res-row:hover .preview-icon,
+.res-list .res-row:hover svg.lucide-arrow-right,
+.res-list .res-row:hover svg.lucide-chevron-right,
+.res-list .res-row:hover svg.lucide-star,
+.res-list .res-row:hover svg.lucide-external-link,
+.res-list .res-row:hover .res-row__arrow,
+.res-list .res-row:hover .card-action-icon-btn,
+.res-list .res-row:hover .star-action-btn,
+.res-list .res-row:hover .external-action-btn,
+.res-list .res-row:focus-visible .preview-icon,
+.res-list .resource-card-row:hover .preview-icon,
+.resource-card-row:hover .preview-icon {
+  color: #6e6259 !important;
+  stroke: #6e6259 !important;
+}
+
+/* Row Inner Layout Alignment */
+.resource-card-left,
+.res-item-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.folder-row .preview-icon.expanded,
+.folder-row .res-chevron.expanded,
+.folder-row .res-row__arrow.expanded,
+.folder-row .lucide-chevron-right.expanded {
+  transform: rotate(90deg);
+  transform-origin: center;
+}
+
+.resource-card-actions,
+.res-item-actions,
+.action-icons {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.card-action-icon-btn,
+.star-action-btn,
+.external-action-btn {
+  width: 16px;
+  height: 16px;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  color: #6e6259 !important;
+  stroke: #6e6259 !important;
+  transition: opacity 0.15s ease;
+}
+
+.card-action-icon-btn:hover,
+.star-action-btn:hover,
+.external-action-btn:hover {
+  opacity: 0.75;
+}
+
+.card-action-icon-btn svg,
+.star-action-btn svg,
+.external-action-btn svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+/* Folder expanded items */
+.folder-expanded-children {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-left: 20px;
+  margin-top: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.folder-child-item {
+  height: 39px;
+  min-height: 39px;
+  padding: 0 12px;
+  background-color: #f9f8f7 !important;
+  border: 1px solid #e5e2de;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12.5px;
+  color: rgb(49, 44, 42) !important;
+  box-sizing: border-box;
+}
+
+.empty-resource-state,
+.empty-state {
+  color: rgb(49, 44, 42) !important;
+  font-size: 13px;
+  padding: 32px 0;
+  text-align: center;
+}
+
+
+
+/* ==========================================================================
+   9. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .top-navigation {
+    padding: 0 24px;
+  }
+
+  .main-nav {
+    margin-left: 20px;
+    gap: 16px;
+  }
+
+  .nav-item {
+    padding: 0 8px;
+    font-size: 14px;
+  }
+
+  .hero-banner {
+    height: 160px;
+    min-height: 160px;
+    max-height: 160px;
+    padding: 0 32px 14px 32px;
+  }
+
+  .page-content {
+    padding: 0 24px 40px;
+  }
+}
+
+@media (max-width: 820px) {
+  .content-layout {
+    flex-direction: column;
+  }
+
+  nav.section-nav,
+  .sidebar-card,
+  .sidebar-card-container {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    max-height: none;
+    overflow-y: visible;
+  }
+
+  .top-navigation {
+    height: auto;
+    min-height: 51px;
+    flex-wrap: wrap;
+    padding: 10px 16px;
+    gap: 12px;
+  }
+
+  .main-nav {
+    order: 3;
+    width: 100%;
+    margin: 8px 0 0 0;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+}
+
+/* ==========================================================================
+   MANAGE CONTENT EDIT STATE (inside section.pane)
+   ========================================================================== */
+
+/* 1. Header Layout */
+.res-manage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.res-manage-heading {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgb(49, 44, 42) !important;
+  margin: 0;
+}
+
+.res-manage-header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.res-manage-cancel-btn {
+  background: #ffffff;
+  border: 1px solid #d5cfc9;
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgb(49, 44, 42) !important;
+  cursor: pointer;
+  line-height: 1.4;
+  transition: background-color 0.15s ease;
+}
+
+.res-manage-cancel-btn:hover {
+  background: #f9fafb;
+  border-color: #d5cfc9;
+}
+
+.res-manage-save-btn {
+  background: #eb1700;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  cursor: pointer;
+  line-height: 1.4;
+  transition: background-color 0.15s ease;
+}
+
+.res-manage-save-btn:hover {
+  background: #c81400;
+}
+
+/* 2. Category Title & Description Edit Fields */
+.res-manage-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.res-manage-category-name {
+  height: 38px;
+  width: 100%;
+  padding: 0 12px;
+  border: 1px solid #d5cfc9;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #312c2a !important;
+  outline: none;
+  box-sizing: border-box;
+  background: #ffffff;
+  font-family: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  margin-bottom: 0;
+  box-shadow: none;
+}
+
+.res-manage-category-name:focus,
+.res-manage-category-name:active {
+  border-color: #fca5a5 !important;
+  box-shadow: 0 0 0 3px #eb170014 !important;
+}
+
+.res-manage-category-desc,
+input.res-manage-category-desc,
+textarea.res-manage-category-desc {
+  height: 79px;
+  min-height: 79px;
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #d5cfc9;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #312c2a !important;
+  outline: none;
+  box-sizing: border-box;
+  background: #ffffff;
+  font-family: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  line-height: 1.4;
+  resize: vertical;
+  margin-top: 0;
+  box-shadow: none;
+}
+
+.res-manage-category-desc:focus,
+.res-manage-category-desc:active,
+input.res-manage-category-desc:focus,
+input.res-manage-category-desc:active,
+textarea.res-manage-category-desc:focus,
+textarea.res-manage-category-desc:active {
+  border-color: #fca5a5 !important;
+  box-shadow: 0 0 0 3px #eb170014 !important;
+}
+
+/* Manage Notification Alert */
+.res-manage-notification {
+  margin-bottom: 12px;
+  padding: 8px 14px;
+  border: 1px solid #fca5a5;
+  border-radius: 6px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 13px;
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+
+.res-manage-add-alert {
+  margin-top: 8px;
+  margin-bottom: 14px;
+}
+
+/* 3. "Add Items" Creation Form */
+.res-manage-add-section {
+  width: 100%;
+}
+
+.res-manage-add-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(49, 44, 42) !important;
+  margin: 0 0 8px 0;
+}
+
+.res-manage-add-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.res-manage-add-title {
+  flex: 1;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid #d5cfc9;
+  border-radius: 6px;
+  font-size: 13px;
+  box-sizing: border-box;
+  outline: none;
+  background: #ffffff;
+  color: #312c2a !important;
+  font-family: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: none;
+}
+
+.res-manage-add-title:focus,
+.res-manage-add-title:active {
+  border-color: #fca5a5 !important;
+  box-shadow: 0 0 0 3px #eb170014 !important;
+}
+
+.res-manage-add-url {
+  flex: 1.5;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid #d5cfc9;
+  border-radius: 6px;
+  font-size: 13px;
+  box-sizing: border-box;
+  outline: none;
+  background: #ffffff;
+  color: #312c2a !important;
+  font-family: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: none;
+}
+
+.res-manage-add-url:focus,
+.res-manage-add-url:active {
+  border-color: #fca5a5 !important;
+  box-shadow: 0 0 0 3px #eb170014 !important;
+}
+
+.res-manage-add-btn {
+  background: #eb1700;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 0 20px;
+  height: 36px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+  line-height: 36px;
+  transition: background-color 0.15s ease;
+}
+
+.res-manage-add-btn:hover:not(:disabled) {
+  background: #c81400;
+}
+
+.res-manage-add-btn:disabled {
+  opacity: 0.45 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+}
+
+/* 4. Manageable Items List (div.res-list-manage) */
+
+/* Input styling for list items – neutral grey border, no hover/focus red */
+.res-list-manage input[type="text"],
+.res-list-manage input[type="url"],
+.res-list-manage .res-row input,
+.res-list-manage .res-row-editing input {
+  border: 1px solid #d5cfc9 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background-color: #ffffff !important;
+  transition: none !important;
+}
+
+/* Turn off red hover effect when not focused */
+.res-list-manage input[type="text"]:hover:not(:focus),
+.res-list-manage input[type="url"]:hover:not(:focus),
+.res-list-manage .res-row input:hover:not(:focus),
+.res-list-manage .res-row-editing input:hover:not(:focus) {
+  border: 1px solid #d5cfc9 !important;
+  background-color: #ffffff !important;
+  box-shadow: none !important;
+  outline: none !important;
+  cursor: text !important;
+}
+
+/* Editable row inputs: base styling */
+.res-list-manage input,
+.res-row-editing input,
+.res-row-editing input[type="text"],
+.res-row-editing input[type="url"],
+div[class*="res-row"] input,
+.res-list .form-input,
+.res-row .form-input,
+.cql-add .form-input,
+div[class*="res-"] .form-input {
+  border: 1px solid #d5cfc9;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Hover state when not focused: neutral border */
+.res-list-manage input:hover:not(:focus),
+.res-row-editing input:hover:not(:focus),
+div[class*="res-row"] input:hover:not(:focus),
+.res-list .form-input:hover:not(:focus),
+.res-row .form-input:hover:not(:focus),
+.cql-add .form-input:hover:not(:focus),
+div[class*="res-"] .form-input:hover:not(:focus),
+.quick-link-manage-item-editing input:hover:not(:focus) {
+  border-color: #d5cfc9 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Focus and active state: identical to Link Title and Link URL */
+.res-list-manage input:focus,
+.res-list-manage input:focus:hover,
+.res-list-manage input:active,
+.res-list-manage input:focus-visible,
+.res-row-editing input:focus,
+.res-row-editing input:focus:hover,
+.res-row-editing input:active,
+.res-row-editing input:focus-visible,
+div[class*="res-row"] input:focus,
+div[class*="res-row"] input:focus:hover,
+div[class*="res-row"] input:active,
+div[class*="res-row"] input:focus-visible,
+.res-list .form-input:focus,
+.res-list .form-input:focus:hover,
+.res-list .form-input:active,
+.res-list .form-input:focus-visible,
+.res-row .form-input:focus,
+.res-row .form-input:focus:hover,
+.res-row .form-input:active,
+.res-row .form-input:focus-visible,
+.cql-add .form-input:focus,
+.cql-add .form-input:focus:hover,
+.cql-add .form-input:active,
+.cql-add .form-input:focus-visible,
+div[class*="res-"] .form-input:focus,
+div[class*="res-"] .form-input:focus:hover,
+div[class*="res-"] .form-input:active,
+div[class*="res-"] .form-input:focus-visible,
+.quick-link-manage-item-editing input:focus,
+.quick-link-manage-item-editing input:focus:hover,
+.quick-link-manage-item-editing input:active,
+.quick-link-manage-item-editing input:focus-visible {
+  border-color: #fca5a5 !important;
+  box-shadow: 0 0 0 3px #eb170014 !important;
+  outline: none !important;
+}
+
+div.res-list-manage {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  border: 1px solid #e8e6e3 !important;
+  border-radius: 6px;
+  background: #ffffff;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.res-manage-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 44px;
+  min-height: 44px;
+  padding: 0 12px;
+  border-bottom: 1px solid #e8e6e3 !important;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+.res-manage-item-row:last-child {
+  border-bottom: none !important;
+}
+
+.res-manage-item-row:hover {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+.res-manage-item-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.res-manage-link-chain-icon,
+.res-manage-link-chain-icon svg {
+  color: #6e6259 !important;
+  stroke: #6e6259 !important;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.res-manage-item-name {
+  font-size: 13px;
+  font-weight: 400;
+  color: #312c2a !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.res-manage-actions-toolbar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.res-manage-action-icon-btn svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.res-manage-action-icon-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #6e6259 !important;
+  cursor: pointer;
+  line-height: 1;
+  transition: border-color 0.15s ease, color 0.15s ease;
+  box-sizing: border-box;
+}
+
+.res-manage-action-icon-btn svg {
+  color: inherit;
+  stroke: currentColor;
+}
+
+.res-manage-action-icon-btn.edit {
+  color: #6e6259 !important;
+}
+
+.res-manage-action-icon-btn.move-up,
+.res-manage-action-icon-btn.move-down {
+  color: #6e6259 !important;
+}
+
+.res-manage-action-icon-btn.delete {
+  color: #eb1700 !important;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  width: 26px;
+  height: 26px;
+}
+
+.res-manage-action-icon-btn.delete svg {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+}
+
+/* Disabled state for move arrows */
+.res-manage-action-icon-btn:disabled,
+.res-manage-action-icon-btn.move-up:disabled,
+.res-manage-action-icon-btn.move-down:disabled {
+  color: #d5cfc9 !important;
+  stroke: #d5cfc9 !important;
+  opacity: 1 !important;
+  cursor: not-allowed !important;
+  border-color: transparent !important;
+}
+
+.res-manage-action-icon-btn:disabled svg,
+.res-manage-action-icon-btn.move-up:disabled svg,
+.res-manage-action-icon-btn.move-down:disabled svg {
+  color: #d5cfc9 !important;
+  stroke: #d5cfc9 !important;
+}
+
+/* Hover state: hover border colour #d5cfc9, hover color #eb1700 */
+.res-manage-action-icon-btn:hover:not(:disabled),
+.res-manage-action-icon-btn.edit:hover:not(:disabled),
+.res-manage-action-icon-btn.move-up:hover:not(:disabled),
+.res-manage-action-icon-btn.move-down:hover:not(:disabled),
+.res-manage-action-icon-btn.delete:hover:not(:disabled) {
+  border: 1px solid #d5cfc9 !important;
+  color: #eb1700 !important;
+  background-color: transparent !important;
+}
+
+.res-manage-action-icon-btn:hover:not(:disabled) svg,
+.res-manage-action-icon-btn.edit:hover:not(:disabled) svg,
+.res-manage-action-icon-btn.move-up:hover:not(:disabled) svg,
+.res-manage-action-icon-btn.move-down:hover:not(:disabled) svg,
+.res-manage-action-icon-btn.delete:hover:not(:disabled) svg {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+}
+
+/* Inline Edit in Row */
+.res-manage-inline-edit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.res-manage-inline-input {
+  flex: 1;
+  height: 30px;
+  padding: 0 8px;
+  border: 1px solid #d5cfc9;
+  border-radius: 4px;
+  font-size: 13px;
+  color: rgb(49, 44, 42) !important;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.res-manage-inline-input:focus,
+.res-manage-inline-input:active {
+  border-color: #fca5a5 !important;
+  box-shadow: 0 0 0 3px #eb170014 !important;
+  outline: none !important;
+}
+
+.res-manage-inline-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.res-manage-inline-btn {
+  height: 26px;
+  width: 26px;
+  padding: 0;
+  margin: 0;
+  border-radius: 4px;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  line-height: 1;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.res-manage-inline-btn svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.res-manage-inline-save,
+.res-manage-inline-save svg {
+  color: #16a34a !important;
+  stroke: #16a34a !important;
+}
+
+.res-manage-inline-save:hover {
+  border: 1px solid #d5cfc9 !important;
+  background-color: transparent !important;
+}
+
+.res-manage-inline-save:hover,
+.res-manage-inline-save:hover svg {
+  color: #15803d !important;
+  stroke: #15803d !important;
+}
+
+.res-manage-inline-cancel,
+.res-manage-inline-cancel svg {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+}
+
+.res-manage-inline-cancel:hover {
+  border: 1px solid #d5cfc9 !important;
+  background-color: transparent !important;
+}
+
+.res-manage-inline-cancel:hover,
+.res-manage-inline-cancel:hover svg {
+  color: #c81400 !important;
+  stroke: #c81400 !important;
+}
+
+/* ==========================================================================
+   RIGHT CONTENT PANEL TEXT COLOR OVERRIDES: #312c2a
+   ========================================================================== */
+.right-content-panel,
+.right-content-panel.pane,
+section.pane,
+section.resource-card,
+.reference-manage-content,
+.quick-link-manage-card,
+.manage-content-view {
+  color: #312c2a !important;
+}
+
+.right-content-panel p,
+.right-content-panel h1,
+.right-content-panel h2,
+.right-content-panel h3,
+.right-content-panel h4,
+.right-content-panel label,
+.right-content-panel span:not(.res-row__icon):not(.active-section-badge-outline):not(.preview-icon):not(.res-row__arrow):not(.manage-action-btn):not(.manage-action-btn *):not(.panel-top-manage):not(.panel-top-manage *):not(.ql-manage-top-btn):not(.ql-manage-top-btn *):not(.ref-manage-btn):not(.ref-manage-btn *):not(.res-manage-link-chain-icon):not(.res-manage-link-chain-icon *):not(.quick-link-gallery-link-icon):not(.quick-link-gallery-link-icon *):not(.folder-count):not(.folder-count *):not(.ref-card-count):not(.ref-card-count *),
+.right-content-panel input,
+.right-content-panel textarea,
+section.pane p,
+section.pane h1,
+section.pane h2,
+section.pane h3,
+section.pane h4,
+section.pane label,
+section.pane input,
+section.pane textarea,
+section.resource-card p,
+section.resource-card h1,
+section.resource-card h2,
+section.resource-card h3 {
+  color: #312c2a !important;
+}
+
+.right-content-panel input::placeholder,
+.right-content-panel textarea::placeholder,
+section.pane input::placeholder,
+section.pane textarea::placeholder {
+  color: rgba(49, 44, 42, 0.5) !important;
+}
+
+/* 1. Cancel button, subcategory, description, gallery child items */
+.res-manage-cancel-btn,
+.reference-manage-header-cancel,
+.quick-link-manage-cancel,
+.manage-cancel,
+.res-manage-category-name,
+.res-manage-category-desc,
+input.res-manage-category-desc,
+textarea.res-manage-category-desc,
+.active-section-title,
+.active-section-subtitle,
+.res-manage-item-name,
+.res-manage-inline-input,
+.res-row__label,
+.resource-card-title,
+.res-item-title,
+.label-text,
+.folder-child-item {
+  color: #312c2a !important;
+}
+
+/* 2. Below gallery link icon, edit icon, up and down arrows: #6e6259 */
+.res-manage-link-chain-icon,
+.res-manage-link-chain-icon svg,
+.quick-link-gallery-link-icon,
+.quick-link-gallery-link-icon svg,
+.res-manage-action-icon-btn.edit,
+.res-manage-action-icon-btn.edit svg,
+.res-manage-action-icon-btn.move-up,
+.res-manage-action-icon-btn.move-up svg,
+.res-manage-action-icon-btn.move-down,
+.res-manage-action-icon-btn.move-down svg,
+.quick-link-manage-edit-button,
+.quick-link-manage-edit-button svg,
+.quick-link-manage-move-button,
+.quick-link-manage-move-button svg {
+  color: #6e6259 !important;
+  stroke: #6e6259 !important;
+}
+
+/* 3. Up and down arrow disable color: #d5cfc9 */
+.res-manage-action-icon-btn.move-up:disabled,
+.res-manage-action-icon-btn.move-up:disabled svg,
+.res-manage-action-icon-btn.move-down:disabled,
+.res-manage-action-icon-btn.move-down:disabled svg,
+.res-manage-action-icon-btn:disabled,
+.res-manage-action-icon-btn:disabled svg,
+.quick-link-manage-move-button:disabled,
+.quick-link-manage-move-button:disabled svg {
+  color: #d5cfc9 !important;
+  stroke: #d5cfc9 !important;
+  border-color: transparent !important;
+  opacity: 1 !important;
+}
+
+/* 4. Delete icon color: #eb1700 */
+.res-manage-action-icon-btn.delete,
+.res-manage-action-icon-btn.delete svg,
+.quick-link-manage-delete-button,
+.quick-link-manage-delete-button svg {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+}
+
+/* 5. Icons hover border #d5cfc9 and hover color #eb1700 */
+.res-manage-action-icon-btn:hover:not(:disabled),
+.res-manage-action-icon-btn.edit:hover:not(:disabled),
+.res-manage-action-icon-btn.move-up:hover:not(:disabled),
+.res-manage-action-icon-btn.move-down:hover:not(:disabled),
+.res-manage-action-icon-btn.delete:hover:not(:disabled),
+.quick-link-manage-item-actions button:hover:not(:disabled) {
+  border: 1px solid #d5cfc9 !important;
+  color: #eb1700 !important;
+  background-color: transparent !important;
+}
+
+.res-manage-action-icon-btn:hover:not(:disabled) svg,
+.res-manage-action-icon-btn.edit:hover:not(:disabled) svg,
+.res-manage-action-icon-btn.move-up:hover:not(:disabled) svg,
+.res-manage-action-icon-btn.move-down:hover:not(:disabled) svg,
+.res-manage-action-icon-btn.delete:hover:not(:disabled) svg,
+.quick-link-manage-item-actions button:hover:not(:disabled) svg {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+}
+
+/* 6. Below gallery outer box border color: #e8e6e3 */
+div.res-list-manage,
+.quick-link-manage-items {
+  border: 1px solid #e8e6e3 !important;
+}
+
+/* Preserve specific button text & brand icon colors */
+.add-to-widgets-btn,
+.res-manage-save-btn,
+.res-manage-add-btn,
+.reference-manage-header-save,
+.quick-link-manage-save,
+.manage-save {
+  color: #ffffff !important;
+}
+
+.manage-action-btn,
+.manage-action-btn span,
+.pane-manage-btn,
+.pane-manage-btn span,
+.ql-manage-top-btn,
+.ql-manage-top-btn span,
+.panel-top-manage button,
+.panel-top-manage span {
+  color: #eb1700 !important;
+}
+
+.res-row__icon,
+.res-row__icon svg,
+.res-folder-icon,
+.res-link-icon,
+.active-section-badge-outline,
+.active-section-badge-outline svg {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+}
+
+/* Subcategory, subcategory description, link title, and link URL: border #fca5a5 and box-shadow 0 0 0 3px #eb170014 ONLY on click/focus */
+.res-manage-category-name,
+.res-manage-category-desc,
+input.res-manage-category-desc,
+textarea.res-manage-category-desc,
+.res-manage-add-title,
+.res-manage-add-url,
+.quick-link-manage-field input,
+.quick-link-manage-field textarea,
+.quick-link-manage-add-row input,
+.quick-link-manage-item-editing input,
+.reference-manage-header-field input,
+.reference-manage-header-field textarea,
+.reference-manage-add-row input {
+  border: 1px solid #d5cfc9 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.res-manage-category-name:hover:not(:focus),
+.res-manage-category-desc:hover:not(:focus),
+input.res-manage-category-desc:hover:not(:focus),
+textarea.res-manage-category-desc:hover:not(:focus),
+.res-manage-add-title:hover:not(:focus),
+.res-manage-add-url:hover:not(:focus),
+.quick-link-manage-field input:hover:not(:focus),
+.quick-link-manage-field textarea:hover:not(:focus),
+.quick-link-manage-add-row input:hover:not(:focus),
+.quick-link-manage-item-editing input:hover:not(:focus),
+.reference-manage-header-field input:hover:not(:focus),
+.reference-manage-header-field textarea:hover:not(:focus),
+.reference-manage-add-row input:hover:not(:focus) {
+  border-color: #d5cfc9 !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.res-manage-category-name:focus,
+.res-manage-category-name:active,
+.res-manage-category-desc:focus,
+.res-manage-category-desc:active,
+input.res-manage-category-desc:focus,
+input.res-manage-category-desc:active,
+textarea.res-manage-category-desc:focus,
+textarea.res-manage-category-desc:active,
+.res-manage-add-title:focus,
+.res-manage-add-title:active,
+.res-manage-add-url:focus,
+.res-manage-add-url:active,
+.quick-link-manage-field input:focus,
+.quick-link-manage-field input:active,
+.quick-link-manage-field textarea:focus,
+.quick-link-manage-field textarea:active,
+.quick-link-manage-add-row input:focus,
+.quick-link-manage-add-row input:focus:hover,
+.quick-link-manage-add-row input:active,
+.quick-link-manage-item-editing input:focus,
+.quick-link-manage-item-editing input:focus:hover,
+.quick-link-manage-item-editing input:active,
+.reference-manage-header-field input:focus,
+.reference-manage-header-field input:active,
+.reference-manage-header-field textarea:focus,
+.reference-manage-header-field textarea:active,
+.reference-manage-add-row input:focus,
+.reference-manage-add-row input:active {
+  border-color: #fca5a5 !important;
+  box-shadow: 0 0 0 3px #eb170014 !important;
+  outline: none !important;
+}
+
+/* ==========================================================================
+   SAVE CONFIRMATION MODAL FLOW
+   ========================================================================== */
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(17, 24, 39, 0.45); /* translucent backdrop */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.modal-dialog {
+  background-color: #ffffff;
+  width: 420px;
+  max-width: 90vw;
+  border-radius: 12px;
+  padding: 32px 28px 28px 28px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+  animation: modalFadeIn 0.2s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-success-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #e8f3e9 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.modal-success-badge svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  stroke: #2e7d32;
+}
+
+#modal-headline {
+  color: #312c2a !important;
+}
+
+.modal-headline {
+  font-size: 18px;
+  font-weight: 700;
+  color: #312c2a !important;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.modal-description {
+  font-size: 14px;
+  font-weight: 400;
+  color: #4b5563 !important;
+  margin: 0 0 24px 0;
+  line-height: 1.4;
+}
+
+.modal-done-btn {
+  position: relative;
+  background-color: #eb1700 !important;
+  color: #ffffff !important;
+  border: 1px solid #eb1700 !important;
+  border-radius: 8px;
+  padding: 10px 36px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.modal-done-btn:hover {
+  background-color: #a61008 !important;
+  border-color: #a61008 !important;
+}
+
+.modal-done-btn .nav-tooltip,
+.modal-done-btn .nav-tooltip-box {
+  position: absolute;
+  top: calc(100% + 2px) !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background-color: #FFFFFF !important;
+  color: #111827 !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+  padding: 4px 8px !important;
+  border: 1px solid #111827 !important;
+  border-radius: 0px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) !important;
+  z-index: 1002 !important;
+  pointer-events: none !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
+}
+
+.modal-done-btn:hover .nav-tooltip,
+.modal-done-btn:hover .nav-tooltip-box,
+.modal-done-btn.has-nav-tooltip:hover .nav-tooltip,
+.modal-done-btn.has-nav-tooltip:hover .nav-tooltip-box {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Delete Confirmation Modal */
+.modal-dialog-delete {
+  width: 440px;
+}
+
+.modal-dialog-delete .modal-headline {
+  font-weight: normal !important;
+}
+
+.modal-dialog-delete .modal-description,
+.modal-dialog-delete .modal-description *,
+.modal-dialog-delete .modal-item-highlight {
+  color: #6e6259 !important;
+}
+
+.modal-delete-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #fef2f2 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.modal-delete-badge svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  stroke: #991b1b;
+}
+
+.modal-item-highlight {
+  font-weight: 600;
+  color: #111827 !important;
+}
+
+.modal-btn-group {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.modal-cancel-btn {
+  background-color: #ffffff !important;
+  border: 1px solid #d5cfc9 !important;
+  border-radius: 6px;
+  padding: 9px 24px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151 !important;
+  cursor: pointer;
+  min-width: 90px;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+
+.modal-cancel-btn:hover {
+  background-color: #f9f8f7 !important;
+  border-color: #cbd5e1 !important;
+}
+
+.modal-delete-confirm-btn {
+  background-color: #991b1b !important;
+  color: #ffffff !important;
+  border: 1px solid #991b1b !important;
+  border-radius: 6px;
+  padding: 9px 28px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  min-width: 90px;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  line-height: 1.4;
+  box-sizing: border-box;
+}
+
+.modal-delete-confirm-btn:hover {
+  background-color: #7f1717 !important;
+  border-color: #7f1717 !important;
+}
+
+/* Modal Button Tooltips matching Header Navigation screen tooltip */
+.modal-btn-group button {
+  position: relative;
+}
+
+.modal-btn-group .nav-tooltip,
+.modal-btn-group .nav-tooltip-box {
+  position: absolute;
+  top: calc(100% + 2px) !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  background-color: #FFFFFF !important;
+  color: #111827 !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+  padding: 4px 8px !important;
+  border: 1px solid #111827 !important;
+  border-radius: 0px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) !important;
+  z-index: 1002 !important;
+  pointer-events: none !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
+}
+
+.modal-btn-group button:hover .nav-tooltip,
+.modal-btn-group button:hover .nav-tooltip-box,
+.modal-btn-group .has-nav-tooltip:hover .nav-tooltip,
+.modal-btn-group .has-nav-tooltip:hover .nav-tooltip-box {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* ==========================================================================
+   10. REFERENCE SECTION DEFAULT VIEW: FOLDERS, FILES & LINKS
+   ========================================================================== */
+
+/* Breadcrumb Row */
+.ref-breadcrumb-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  margin-bottom: 4px !important;
+}
+
+.ref-breadcrumb {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 13px !important;
+  color: #6e6259 !important;
+  font-weight: 400 !important;
+}
+
+.ref-breadcrumb span,
+.ref-breadcrumb a,
+.ref-breadcrumb-sep,
+.ref-breadcrumb-current,
+.panel-breadcrumb,
+.panel-breadcrumb *,
+.breadcrumb-segment,
+.breadcrumb-text,
+.breadcrumb-separator {
+  color: #6e6259 !important;
+}
+
+.ref-manage-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  color: #eb1700 !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.ref-manage-btn span {
+  color: #eb1700 !important;
+}
+
+.ref-manage-btn svg {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+}
+
+.ref-manage-btn:hover {
+  opacity: 0.85 !important;
+}
+
+/* Category Overview Block */
+.ref-category-overview {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  margin: 16px 0 20px 0 !important;
+  width: 100% !important;
+}
+
+.ref-overview-left {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 14px !important;
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+
+.ref-category-badge {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 10px !important;
+  border: 1px solid #FECACA !important;
+  background: #FEF2F2 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+}
+
+.ref-category-badge svg {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+}
+
+.ref-overview-text {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+  flex: 1 !important;
+  min-width: 0 !important;
+}
+
+.ref-overview-title,
+.active-section-title,
+.category-title,
+.pane_body .pane_object h2,
+.pane_body .pane_object .category-title,
+.pane_body h2 {
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  color: #312c2a !important;
+  margin: 0 !important;
+  line-height: 1.25 !important;
+}
+
+.ref-overview-subtitle,
+.active-section-subtitle {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: #312c2a !important;
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+.ref-overview-right {
+  flex-shrink: 0 !important;
+}
+
+.ref-add-widget-btn {
+  background: #D51900 !important;
+  color: #FFFFFF !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  padding: 8px 18px !important;
+  border-radius: 8px !important;
+  border: none !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  transition: opacity 0.15s ease !important;
+}
+
+.ref-add-widget-btn:hover {
+  opacity: 0.9 !important;
+}
+
+/* Resources Section & List */
+.ref-resources-section {
+  width: 100% !important;
+}
+
+.ref-resources-heading {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #312c2a !important;
+  margin: 0 0 12px 0 !important;
+}
+
+.ref-resources-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  width: 100% !important;
+}
+
+/* Folder Container (.folder-card) */
+.folder-card {
+  background-color: #f9f8f7 !important;
+  background: #f9f8f7 !important;
+  border: 1px solid #e8e6e3 !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out !important;
+}
+
+.folder-card:not(.is-expanded):not(:has(.folder-children)):hover,
+.folder-card:not(.is-expanded):not(:has(.folder-children)):focus-visible {
+  background-color: #fef2f1 !important;
+  border-color: #fca5a5 !important;
+}
+
+/* When expanded: Remove the outer border wrapping the folder hierarchy */
+.folder-card.is-expanded,
+.folder-card:has(.folder-children) {
+  border: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+  box-shadow: none !important;
+}
+
+.folder-card.is-expanded:hover,
+.folder-card.is-expanded:focus-visible,
+.folder-card:has(.folder-children):hover,
+.folder-card:has(.folder-children):focus-visible {
+  border: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Folder Header Row (.folder-header) */
+.folder-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  height: 39px !important;
+  padding: 0 16px !important;
+  cursor: pointer !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  box-sizing: border-box !important;
+  user-select: none !important;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out !important;
+}
+
+.folder-header:hover,
+.folder-header:focus-visible,
+.folder-card:not(.is-expanded):not(:has(.folder-children)):hover .folder-header {
+  background-color: #fef2f1 !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Expanded folder header keeps the single card border and hover state */
+.folder-card.is-expanded > .folder-header,
+.folder-card:has(.folder-children) > .folder-header {
+  border: 1px solid #e8e6e3 !important;
+  border-radius: 8px !important;
+  background-color: #f9f8f7 !important;
+  background: #f9f8f7 !important;
+  box-sizing: border-box !important;
+}
+
+.folder-card.is-expanded > .folder-header:hover,
+.folder-card.is-expanded > .folder-header:focus-visible,
+.folder-card:has(.folder-children) > .folder-header:hover,
+.folder-card:has(.folder-children) > .folder-header:focus-visible {
+  background-color: #fef2f1 !important;
+  background: #fef2f1 !important;
+  border-color: #fca5a5 !important;
+}
+
+.folder-header-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.folder-header-left svg {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+  width: 16px !important;
+  height: 16px !important;
+  flex-shrink: 0 !important;
+}
+
+.folder-name {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: #312c2a !important;
+  display: inline !important;
+}
+
+.folder-count {
+  color: #eb1700 !important;
+  font-weight: 400 !important;
+  font-size: 13px !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  display: inline !important;
+}
+
+.folder-header-right {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 24px !important;
+  height: 24px !important;
+  border: 1px solid transparent !important;
+  border-radius: 4px !important;
+  box-sizing: border-box !important;
+  transition: border-color 0.15s ease, color 0.15s ease, stroke 0.15s ease !important;
+}
+
+.folder-header-right:hover {
+  border: 1px solid #d5cfc9 !important;
+  border-color: #d5cfc9 !important;
+}
+
+.folder-header-right:hover svg {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+}
+
+.folder-header-right svg {
+  display: block !important;
+  width: 16px !important;
+  height: 16px !important;
+  color: #6e6259 !important;
+  stroke: #6e6259 !important;
+  transition: color 0.15s ease, stroke 0.15s ease !important;
+}
+
+/* Expanded Folder Nested File List (.folder-children) */
+/* Under the folder hierarchy: remove outer border (no left/right/bottom border), keep separator border */
+.folder-children {
+  width: 100% !important;
+  border: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  border-top: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-sizing: border-box !important;
+}
+
+.folder-child-row,
+.folder-doc-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  max-height: 44px !important;
+  padding: 0 16px 0 26px !important;
+  border-top: 1px solid #f1f0ee !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  box-sizing: border-box !important;
+  color: #312c2a !important;
+  transition: background-color 0.15s ease-in-out !important;
+}
+
+/* Remove top border from Document 1.pdf (first item) */
+.folder-child-row:first-child,
+.folder-doc-row:first-child {
+  border-top: none !important;
+}
+
+.folder-child-row:hover,
+.folder-doc-row:hover {
+  background-color: #f9f8f7 !important;
+  background: #f9f8f7 !important;
+  border-top: 1px solid #f1f0ee !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+}
+
+.folder-child-row:first-child:hover,
+.folder-doc-row:first-child:hover {
+  border-top: none !important;
+}
+
+.folder-child-row.folder-empty-row:hover {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+.child-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex: 1 !important;
+  min-width: 0 !important;
+  color: #312c2a !important;
+}
+
+.child-left svg {
+  color: #312c2a !important;
+  stroke: #312c2a !important;
+  width: 16px !important;
+  height: 16px !important;
+  flex-shrink: 0 !important;
+}
+
+.child-file-title {
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  color: #312c2a !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.child-right-toolbar {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 20px !important;
+  flex-shrink: 0 !important;
+  color: #312c2a !important;
+}
+
+.child-file-size {
+  min-width: 50px !important;
+  text-align: right !important;
+  font-size: 12px !important;
+  color: #6e6259 !important;
+  font-weight: 400 !important;
+}
+
+.child-file-type {
+  min-width: 45px !important;
+  text-align: left !important;
+  font-size: 12px !important;
+  color: #6e6259 !important;
+  font-weight: 400 !important;
+}
+
+/* Right side action icons in default Reference (.child-action-btn, .link-action-btn) */
+.child-action-btn,
+.link-action-btn {
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  border-radius: 4px !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 24px !important;
+  height: 24px !important;
+  box-sizing: border-box !important;
+  color: #6e6259 !important;
+  stroke: #6e6259 !important;
+  transition: border-color 0.15s ease, color 0.15s ease, stroke 0.15s ease !important;
+}
+
+.child-action-btn:hover,
+.link-action-btn:hover {
+  border: 1px solid #d5cfc9 !important;
+  border-color: #d5cfc9 !important;
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+  background: transparent !important;
+  opacity: 1 !important;
+}
+
+.child-action-btn svg,
+.link-action-btn svg {
+  display: block !important;
+  width: 15px !important;
+  height: 15px !important;
+  color: #6e6259 !important;
+  stroke: #6e6259 !important;
+  transition: color 0.15s ease, stroke 0.15s ease !important;
+}
+
+.child-action-btn:hover svg,
+.link-action-btn:hover svg {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+}
+
+.child-action-btn.star-btn:hover svg[fill]:not([fill="none"]),
+.link-action-btn.star-btn:hover svg[fill]:not([fill="none"]) {
+  fill: #eb1700 !important;
+}
+
+/* Standard Link Cards */
+.standard-link-card {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  height: 39px !important;
+  padding: 0 16px !important;
+  background-color: #f9f8f7 !important;
+  background: #f9f8f7 !important;
+  border: 1px solid #e8e6e3 !important;
+  border-radius: 8px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  cursor: pointer !important;
+  color: #312c2a !important;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out !important;
+}
+
+.standard-link-card:hover,
+.standard-link-card:focus-visible {
+  border-color: #fca5a5 !important;
+  background-color: #fef2f1 !important;
+}
+
+.link-card-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  color: #312c2a !important;
+}
+
+.link-card-left svg {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+  width: 15px !important;
+  height: 15px !important;
+  flex-shrink: 0 !important;
+}
+
+.link-card-title {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  color: #312c2a !important;
+}
+
+.link-card-right {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  color: #6e6259 !important;
+}
+
+/* ==========================================================================
+   11. QUICK LINKS RIGHT CONTENT PANEL: MATCHING REFERENCE VIEW STYLES
+   ========================================================================== */
+
+/* MANAGE button with file-pen icon in Quick Links header */
+.panel-top-manage .ref-manage-btn,
+.panel-top-manage .manage-action-btn,
+.panel-top-manage .ql-manage-top-btn,
+.ql-manage-top-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  cursor: pointer !important;
+  color: #eb1700 !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.panel-top-manage .ref-manage-btn svg,
+.panel-top-manage .manage-action-btn svg,
+.panel-top-manage .ql-manage-top-btn svg,
+.ql-manage-top-btn svg {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+  width: 13px !important;
+  height: 13px !important;
+}
+
+.panel-top-manage .ref-manage-btn span,
+.panel-top-manage .manage-action-btn span,
+.panel-top-manage .ql-manage-top-btn span,
+.ql-manage-top-btn span {
+  color: #eb1700 !important;
+}
+
+.panel-top-manage .ref-manage-btn:hover,
+.panel-top-manage .manage-action-btn:hover,
+.panel-top-manage .ql-manage-top-btn:hover,
+.ql-manage-top-btn:hover {
+  opacity: 0.85 !important;
+}
+
+/* Quick Links Each Content Card: Background #FFFFFF, Border #E5E7EB, Height 39px */
+.pane_body .res-row,
+.pane_body .res-card,
+.pane_body .resource-card-row,
+.pane_body .view-a-row,
+.view-a-row {
+  background-color: #FFFFFF !important;
+  background: #FFFFFF !important;
+  border: 1px solid #E5E7EB !important;
+  border-radius: 8px !important;
+  height: 39px !important;
+  min-height: 39px !important;
+  padding: 0 16px !important;
+  box-sizing: border-box !important;
+  color: #312c2a !important;
+  cursor: pointer !important;
+  transition: border-color 0.15s ease, background-color 0.15s ease !important;
+}
+
+/* Quick Links Content Card Hover: Background #fef2f1, Border #fca5a5 */
+.pane_body .res-row:hover,
+.pane_body .res-row:focus-visible,
+.pane_body .res-card:hover,
+.pane_body .res-card:focus-visible,
+.pane_body .resource-card-row:hover,
+.pane_body .resource-card-row:focus-visible,
+.pane_body .view-a-row:hover,
+.pane_body .view-a-row:focus-visible,
+.view-a-row:hover,
+.view-a-row:focus-visible,
+.resource-card-row.view-a-row:hover,
+.resource-card-row.view-a-row:focus-visible,
+.res-list .res-row:hover,
+.res-list .resource-card-row:hover {
+  background-color: #fef2f1 !important;
+  background: #fef2f1 !important;
+  border: 1px solid #fca5a5 !important;
+  border-color: #fca5a5 !important;
+  outline: none !important;
+}
+
+/* Text Color: #312c2a for each content row (both default and hover) - normal weight */
+.pane_body .resource-card-title,
+.pane_body .res-item-title,
+.pane_body .res-row__label,
+.pane_body span.label-text,
+.view-a-row .resource-card-title,
+.view-a-row .res-item-title,
+.view-a-row .link-card-title,
+.view-a-row:hover .resource-card-title,
+.view-a-row:hover .res-item-title,
+.view-a-row:hover .link-card-title,
+.pane_body .res-row:hover .resource-card-title,
+.pane_body .res-row:hover .res-item-title,
+.pane_body .resource-card-row:hover .resource-card-title,
+.pane_body .resource-card-row:hover .res-item-title,
+.pane_body .res-row:hover .res-row__label,
+.pane_body .res-row:hover span.label-text,
+.pane_body .resource-card-row:hover .res-row__label,
+.pane_body .resource-card-row:hover span.label-text,
+.standard-link-card .link-card-title,
+.standard-link-card:hover .link-card-title {
+  color: #312c2a !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+}
+
+/* Left Icon Color: #D51900 */
+.pane_body .res-row__icon,
+.pane_body .res-row__icon svg,
+.pane_body .res-link-icon,
+.pane_body .res-link-icon svg,
+.view-a-row .res-row__icon,
+.view-a-row .res-row__icon svg,
+.view-a-row .res-link-icon,
+.view-a-row .res-link-icon svg,
+.view-a-row svg.lucide-link,
+.pane_body .res-row:hover .res-row__icon,
+.pane_body .res-row:hover .res-link-icon,
+.pane_body .resource-card-row:hover .res-row__icon,
+.pane_body .resource-card-row:hover .res-link-icon,
+.view-a-row:hover .res-row__icon,
+.view-a-row:hover .res-link-icon {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+  width: 15px !important;
+  height: 15px !important;
+  flex-shrink: 0 !important;
+}
+
+/* Right Icon Color: #6e6259 */
+.pane_body .preview-icon,
+.pane_body .res-row__arrow,
+.pane_body svg.lucide-arrow-right,
+.view-a-row .preview-icon,
+.view-a-row .res-row__arrow,
+.view-a-row svg.lucide-arrow-right,
+.pane_body .res-row:hover .preview-icon,
+.pane_body .res-row:hover .res-row__arrow,
+.pane_body .res-row:hover svg.lucide-arrow-right,
+.view-a-row:hover .preview-icon,
+.view-a-row:hover .res-row__arrow,
+.view-a-row:hover svg.lucide-arrow-right {
+  color: #6e6259 !important;
+  stroke: #6e6259 !important;
+  width: 15px !important;
+  height: 15px !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+}
+
+/* ==========================================================================
+   DEFAULT AND HOVER RULES FOR RESOURCE CARD ROWS UNDER "RESOURCES (8)"
+   ========================================================================== */
+
+/* Reset duplicate borders on folder containers and headers */
+.res-list .folder-card:not(.is-expanded):not(:has(.folder-children)),
+.res-list button.folder-header,
+.res-list .res-row[data-type="folder"],
+.res-list .res-row,
+.res-list .standard-link-card,
+.ref-resources-list .folder-card:not(.is-expanded):not(:has(.folder-children)),
+.ref-resources-list button.folder-header,
+.ref-resources-list .res-row[data-type="folder"],
+.ref-resources-list .res-row,
+.ref-resources-list .standard-link-card,
+section.pane .folder-card:not(.is-expanded):not(:has(.folder-children)),
+section.pane button.folder-header,
+section.pane .res-row[data-type="folder"],
+section.pane .res-row,
+section.pane .standard-link-card,
+.folder-card:not(.is-expanded):not(:has(.folder-children)),
+.standard-link-card {
+  border: 1px solid #e8e6e3 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border-radius: 8px !important;
+  background-color: #f9f8f7 !important;
+  box-sizing: border-box !important;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out !important;
+}
+
+/* Ensure inner elements do not stack an extra border */
+.res-list .folder-card:not(.is-expanded):not(:has(.folder-children)) .folder-header,
+.res-list .folder-card:not(.is-expanded):not(:has(.folder-children)) button,
+.ref-resources-list .folder-card:not(.is-expanded):not(:has(.folder-children)) .folder-header,
+.ref-resources-list .folder-card:not(.is-expanded):not(:has(.folder-children)) button,
+section.pane .folder-card:not(.is-expanded):not(:has(.folder-children)) .folder-header,
+section.pane .folder-card:not(.is-expanded):not(:has(.folder-children)) button,
+.folder-card:not(.is-expanded):not(:has(.folder-children)) .folder-header,
+.folder-card:not(.is-expanded):not(:has(.folder-children)) button,
+.folder-header {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Maintain identical hover state with link rows */
+.res-list .folder-card:not(.is-expanded):not(:has(.folder-children)):hover,
+.res-list button.folder-header:hover,
+.res-list .res-row[data-type="folder"]:hover,
+.res-list .res-row:hover,
+.res-list .standard-link-card:hover,
+.res-list .folder-card:not(.is-expanded):not(:has(.folder-children)):focus-visible,
+.res-list button.folder-header:focus-visible,
+.res-list .res-row[data-type="folder"]:focus-visible,
+.res-list .res-row:focus-visible,
+.res-list .standard-link-card:focus-visible,
+.ref-resources-list .folder-card:not(.is-expanded):not(:has(.folder-children)):hover,
+.ref-resources-list button.folder-header:hover,
+.ref-resources-list .res-row[data-type="folder"]:hover,
+.ref-resources-list .res-row:hover,
+.ref-resources-list .standard-link-card:hover,
+.ref-resources-list .folder-card:not(.is-expanded):not(:has(.folder-children)):focus-visible,
+.ref-resources-list button.folder-header:focus-visible,
+.ref-resources-list .res-row[data-type="folder"]:focus-visible,
+.ref-resources-list .res-row:focus-visible,
+.ref-resources-list .standard-link-card:focus-visible,
+section.pane .folder-card:not(.is-expanded):not(:has(.folder-children)):hover,
+section.pane button.folder-header:hover,
+section.pane .res-row[data-type="folder"]:hover,
+section.pane .res-row:hover,
+section.pane .standard-link-card:hover,
+section.pane .folder-card:not(.is-expanded):not(:has(.folder-children)):focus-visible,
+section.pane button.folder-header:focus-visible,
+section.pane .res-row[data-type="folder"]:focus-visible,
+section.pane .res-row:focus-visible,
+section.pane .standard-link-card:focus-visible,
+.folder-card:not(.is-expanded):not(:has(.folder-children)):hover,
+.folder-card:not(.is-expanded):not(:has(.folder-children)):focus-visible,
+.standard-link-card:hover,
+.standard-link-card:focus-visible {
+  border-color: #fca5a5 !important;
+  background-color: #fef2f1 !important;
+}
+
+.folder-card:not(.is-expanded):not(:has(.folder-children)):hover .folder-header,
+.folder-card:not(.is-expanded):not(:has(.folder-children)) .folder-header:hover,
+.folder-card:not(.is-expanded):not(:has(.folder-children)):focus-visible .folder-header,
+.folder-card:not(.is-expanded):not(:has(.folder-children)) .folder-header:focus-visible {
+  background-color: #fef2f1 !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Expanded Folder: Remove outer border wrapping folder hierarchy */
+.res-list .folder-card.is-expanded,
+.res-list .folder-card:has(.folder-children),
+.ref-resources-list .folder-card.is-expanded,
+.ref-resources-list .folder-card:has(.folder-children),
+section.pane .folder-card.is-expanded,
+section.pane .folder-card:has(.folder-children),
+.folder-card.is-expanded,
+.folder-card:has(.folder-children) {
+  border: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border-radius: 0 !important;
+  overflow: visible !important;
+  box-shadow: none !important;
+}
+
+.res-list .folder-card.is-expanded:hover,
+.res-list .folder-card.is-expanded:focus-visible,
+.res-list .folder-card:has(.folder-children):hover,
+.res-list .folder-card:has(.folder-children):focus-visible,
+.ref-resources-list .folder-card.is-expanded:hover,
+.ref-resources-list .folder-card.is-expanded:focus-visible,
+.ref-resources-list .folder-card:has(.folder-children):hover,
+.ref-resources-list .folder-card:has(.folder-children):focus-visible,
+section.pane .folder-card.is-expanded:hover,
+section.pane .folder-card.is-expanded:focus-visible,
+section.pane .folder-card:has(.folder-children):hover,
+section.pane .folder-card:has(.folder-children):focus-visible,
+.folder-card.is-expanded:hover,
+.folder-card.is-expanded:focus-visible,
+.folder-card:has(.folder-children):hover,
+.folder-card:has(.folder-children):focus-visible {
+  border: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* Expanded folder header row maintains single card border and hover state */
+.res-list .folder-card.is-expanded > .folder-header,
+.res-list .folder-card:has(.folder-children) > .folder-header,
+.ref-resources-list .folder-card.is-expanded > .folder-header,
+.ref-resources-list .folder-card:has(.folder-children) > .folder-header,
+section.pane .folder-card.is-expanded > .folder-header,
+section.pane .folder-card:has(.folder-children) > .folder-header,
+.folder-card.is-expanded > .folder-header,
+.folder-card:has(.folder-children) > .folder-header {
+  border: 1px solid #e8e6e3 !important;
+  border-radius: 8px !important;
+  background-color: #f9f8f7 !important;
+  background: #f9f8f7 !important;
+  height: 39px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 0 16px !important;
+  cursor: pointer !important;
+  box-sizing: border-box !important;
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out !important;
+}
+
+.res-list .folder-card.is-expanded > .folder-header:hover,
+.res-list .folder-card.is-expanded > .folder-header:focus-visible,
+.res-list .folder-card:has(.folder-children) > .folder-header:hover,
+.res-list .folder-card:has(.folder-children) > .folder-header:focus-visible,
+.ref-resources-list .folder-card.is-expanded > .folder-header:hover,
+.ref-resources-list .folder-card.is-expanded > .folder-header:focus-visible,
+.ref-resources-list .folder-card:has(.folder-children) > .folder-header:hover,
+.ref-resources-list .folder-card:has(.folder-children) > .folder-header:focus-visible,
+section.pane .folder-card.is-expanded > .folder-header:hover,
+section.pane .folder-card.is-expanded > .folder-header:focus-visible,
+section.pane .folder-card:has(.folder-children) > .folder-header:hover,
+section.pane .folder-card:has(.folder-children) > .folder-header:focus-visible,
+.folder-card.is-expanded > .folder-header:hover,
+.folder-card.is-expanded > .folder-header:focus-visible,
+.folder-card:has(.folder-children) > .folder-header:hover,
+.folder-card:has(.folder-children) > .folder-header:focus-visible {
+  border-color: #fca5a5 !important;
+  background-color: #fef2f1 !important;
+  background: #fef2f1 !important;
+}
+
+/* Nested Document Rows inside Expanded Folders: Under folder hierarchy, remove outer border and keep separator border */
+.res-list .folder-children,
+.ref-resources-list .folder-children,
+section.pane .folder-children,
+.folder-children {
+  width: 100% !important;
+  border: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  border-top: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-sizing: border-box !important;
+}
+
+.res-list .folder-children .folder-doc-row,
+.res-list .folder-children .folder-child-row,
+.ref-resources-list .folder-children .folder-doc-row,
+.ref-resources-list .folder-children .folder-child-row,
+.folder-children .folder-doc-row,
+.folder-children .folder-child-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  max-height: 44px !important;
+  padding: 0 16px 0 26px !important;
+  border-top: 1px solid #f1f0ee !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  border-radius: 0 !important;
+  background-color: transparent !important;
+  background: transparent !important;
+  box-sizing: border-box !important;
+  color: #312c2a !important;
+  transition: background-color 0.15s ease-in-out !important;
+}
+
+/* Remove border on top of the first document row (Document 1.pdf and similar) */
+.res-list .folder-children .folder-doc-row:first-child,
+.res-list .folder-children .folder-child-row:first-child,
+.ref-resources-list .folder-children .folder-doc-row:first-child,
+.ref-resources-list .folder-children .folder-child-row:first-child,
+.folder-children .folder-doc-row:first-child,
+.folder-children .folder-child-row:first-child {
+  border-top: none !important;
+}
+
+.res-list .folder-children .folder-doc-row:hover,
+.res-list .folder-children .folder-child-row:hover,
+.ref-resources-list .folder-children .folder-doc-row:hover,
+.ref-resources-list .folder-children .folder-child-row:hover,
+.folder-children .folder-children .folder-child-row:hover,
+.folder-children .folder-doc-row:hover,
+.folder-children .folder-child-row:hover {
+  background-color: #f9f8f7 !important;
+  background: #f9f8f7 !important;
+  border-top: 1px solid #f1f0ee !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+}
+
+.res-list .folder-children .folder-doc-row:first-child:hover,
+.res-list .folder-children .folder-child-row:first-child:hover,
+.ref-resources-list .folder-children .folder-doc-row:first-child:hover,
+.ref-resources-list .folder-children .folder-child-row:first-child:hover,
+.folder-children .folder-doc-row:first-child:hover,
+.folder-children .folder-child-row:first-child:hover {
+  border-top: none !important;
+}
+
+.res-list .folder-children .folder-child-row.folder-empty-row:hover,
+.ref-resources-list .folder-children .folder-child-row.folder-empty-row:hover,
+.folder-children .folder-child-row.folder-empty-row:hover {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+/* ==========================================================================
+   EXPLICIT COLOR ENFORCEMENTS FOR REFERENCE RIGHT SIDE
+   ========================================================================== */
+
+/* 1. Heading Color: #6e6259 */
+.ref-breadcrumb,
+.ref-breadcrumb *,
+.panel-breadcrumb,
+.panel-breadcrumb * {
+  color: #6e6259 !important;
+}
+
+/* 2. Subcategory Color: #312c2a & font-weight: 600 */
+.ref-overview-title,
+.active-section-title,
+.category-title,
+.pane_body .pane_object h2,
+.pane_body .pane_object .category-title,
+.pane_body h2 {
+  color: #312c2a !important;
+  font-weight: 600 !important;
+  font-size: 18px !important;
+  line-height: 1.25 !important;
+  margin: 0 !important;
+}
+
+/* 3. Description Color: #312c2a & font-size: 13px */
+.ref-overview-subtitle,
+.active-section-subtitle {
+  color: #312c2a !important;
+  font-size: 13px !important;
+}
+
+/* 4. Gallery Text Color: #312c2a & Normal Font Weight for Content */
+.folder-name,
+.child-file-title,
+.link-card-title,
+.child-left,
+.child-right-toolbar,
+.ref-resources-heading {
+  color: #312c2a !important;
+}
+
+.child-file-size,
+.child-file-type {
+  color: #6e6259 !important;
+  font-size: 12px !important;
+}
+
+/* 4a. Folder Count (number text color): #eb1700 */
+.folder-count,
+.ref-card-count,
+.right-content-panel .folder-count,
+.right-content-panel .ref-card-count,
+.right-content-panel span.folder-count,
+.right-content-panel .folder-name .folder-count,
+.right-content-panel .folder-name span.folder-count,
+section.pane .folder-count,
+section.pane .ref-card-count,
+section.pane span.folder-count,
+section.pane .folder-name .folder-count,
+.folder-name .folder-count,
+.folder-name span.folder-count,
+.res-list .folder-count,
+.res-list .ref-card-count,
+.ref-resources-list .folder-count,
+.ref-resources-list .ref-card-count,
+.folder-card .folder-count,
+.folder-card:hover .folder-count,
+.folder-header .folder-count,
+.folder-header:hover .folder-count,
+.folder-card .folder-name .folder-count,
+.folder-header .folder-name .folder-count,
+.ref-card-left .ref-card-count,
+.ref-card-left:hover .ref-card-count,
+.ref-card-label .ref-card-count {
+  color: #eb1700 !important;
+  font-weight: 400 !important;
+  font-size: 13px !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  display: inline !important;
+}
+
+.child-file-title,
+.child-file-size,
+.child-file-type,
+.link-card-title,
+.res-list .child-file-title,
+.res-list .link-card-title,
+.res-list .res-row__label,
+.res-list .resource-card-title,
+.res-list .res-item-title,
+.standard-link-card .link-card-title,
+.standard-link-card:hover .link-card-title,
+.folder-child-row .child-file-title,
+.folder-child-row:hover .child-file-title,
+.folder-doc-row .child-file-title,
+.folder-doc-row:hover .child-file-title {
+  color: #312c2a !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+}
+
+.folder-name,
+.res-list .folder-name,
+.folder-card .folder-name,
+.folder-card:hover .folder-name {
+  color: #312c2a !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  display: inline !important;
+}
+
+/* 5. Folder Icon Color: #eb1700 */
+.ref-category-badge svg,
+.folder-header-left svg,
+svg.lucide-folder,
+svg.lucide-folder-open,
+.res-folder-icon {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+}
+
+/* 6. Link Icon Color: #eb1700 */
+.link-card-left svg,
+.res-link-icon,
+svg.lucide-link,
+svg.lucide-link-2 {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+}
+
+/* 7. Manage Buttons: color #eb1700 and size 12px everywhere */
+.sidebar-manage-btn,
+.sidebar-manage-btn span,
+.sidebar-manage-menu-btn,
+.sidebar-manage-menu-btn span,
+.ref-manage-btn,
+.ref-manage-btn span,
+.ql-manage-top-btn,
+.ql-manage-top-btn span,
+.panel-top-manage button,
+.panel-top-manage span,
+.pane-manage-btn,
+.pane-manage-btn span,
+.manage-action-btn,
+.manage-action-btn span {
+  color: #eb1700 !important;
+  font-size: 12px !important;
+}
+
+.sidebar-manage-btn svg,
+.sidebar-manage-menu-btn svg,
+.ref-manage-btn svg,
+.ql-manage-top-btn svg,
+.panel-top-manage svg,
+.pane-manage-btn svg,
+.manage-action-btn svg {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+}
+
+/* 8. Right Side Icons (chevron, star, external link): #6e6259 */
+.folder-header-right svg,
+.folder-header-right svg.lucide-chevron-down,
+.folder-header-right svg.lucide-chevron-right,
+.child-right-toolbar svg,
+.child-right-toolbar svg.lucide-star,
+.child-right-toolbar svg.lucide-external-link,
+.link-card-right svg,
+.link-card-right svg.lucide-star,
+.link-card-right svg.lucide-external-link,
+.child-action-btn,
+.link-action-btn,
+.child-action-btn svg,
+.link-action-btn svg,
+.star-btn svg,
+.ext-btn svg,
+.preview-icon.lucide-chevron-down,
+.preview-icon.lucide-chevron-right,
+.preview-icon.lucide-star,
+.preview-icon.lucide-external-link,
+.preview-icon.lucide-arrow-right,
+.res-row__arrow {
+  color: #6e6259 !important;
+  stroke: #6e6259 !important;
+}
+
+/* Right side icons in default Reference: hover border #d5cfc9 and hover color #eb1700 */
+.child-action-btn:hover,
+.child-right-toolbar .child-action-btn:hover,
+.folder-children .child-action-btn:hover,
+.link-action-btn:hover,
+.link-card-right .link-action-btn:hover,
+.folder-header-right:hover {
+  border: 1px solid #d5cfc9 !important;
+  border-color: #d5cfc9 !important;
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+}
+
+.child-action-btn:hover svg,
+.child-right-toolbar .child-action-btn:hover svg,
+.folder-children .child-action-btn:hover svg,
+.folder-children .star-btn:hover svg,
+.folder-children .ext-btn:hover svg,
+.link-action-btn:hover svg,
+.link-card-right .link-action-btn:hover svg,
+.link-card-right .star-btn:hover svg,
+.link-card-right .ext-btn:hover svg,
+.folder-header-right:hover svg {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+}
+
+.child-action-btn.star-btn:hover svg[fill]:not([fill="none"]),
+.child-right-toolbar .star-btn:hover svg[fill]:not([fill="none"]),
+.folder-children .star-btn:hover svg[fill]:not([fill="none"]),
+.link-action-btn.star-btn:hover svg[fill]:not([fill="none"]),
+.link-card-right .star-btn:hover svg[fill]:not([fill="none"]) {
+  fill: #eb1700 !important;
+}
+
+/* Starred / Pinned icon in reference gallery: #eb1700 */
+.star-btn.is-starred,
+.star-btn.is-starred svg,
+.star-btn.is-starred svg.lucide-star,
+.star-btn.is-starred .preview-icon.lucide-star,
+.star-btn.is-starred svg[fill] {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+  fill: #eb1700 !important;
+}
+
+/* 9. Below gallery left side icons (Reference Manage): #6e6259 */
+.ref-card-left svg,
+.ref-card-left .folder-category-icon,
+.ref-card-left .lucide-folder-open,
+.ref-card-left .quick-link-gallery-link-icon,
+.ref-card-left .ref-left-folder-icon,
+.ref-card-left .ref-left-link-icon,
+.ref-manage-card-row .ref-card-left svg,
+.ref-manage-card-row .ref-card-left .folder-category-icon,
+.ref-manage-card-row .ref-card-left .lucide-folder-open,
+.ref-manage-card-row .ref-card-left .quick-link-gallery-link-icon {
+  color: #6e6259 !important;
+  stroke: #6e6259 !important;
+  fill: none !important;
+}
+
+.ref-folder-subitem-left svg {
+  color: #312c2a !important;
+  stroke: #312c2a !important;
+  fill: none !important;
+}
+
+/* 10. Below gallery text (Reference Manage): #312c2a */
+.ref-manage-cards-list,
+.ref-manage-card-wrapper,
+.ref-manage-card-row,
+.ref-card-left,
+.ref-card-label,
+.ref-card-label span:not(.ref-card-count),
+.ref-folder-subitem-row,
+.ref-folder-subitem-left,
+.ref-folder-subitem-left span,
+.ref-manage-empty,
+.reference-manage-empty,
+.ref-folder-subitem-empty {
+  color: #312c2a !important;
+}
+
+.ref-folder-subitem-size,
+.ref-folder-subitem-type {
+  color: #6e6259 !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+}
+
+.ref-manage-folder-subitems {
+  background: #f1f5f9 !important;
+  background-color: #f1f5f9 !important;
+}
+
+.ref-folder-subitem-row {
+  border: none !important;
+  border-top: none !important;
+  border-bottom: none !important;
+}
+
+.ref-manage-card-row:hover {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+.ref-folder-subitem-row:hover {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+/* 11. Below gallery action buttons (Reference Manage):
+   - Edit, up/down arrows, chevron: #6e6259
+   - Disabled arrow: #d5cfc9
+   - Delete icon: #eb1700
+*/
+.ref-card-action-btn,
+.ref-card-action-btn svg,
+.ref-card-chevron-btn,
+.ref-card-chevron-btn svg,
+.ref-card-edit-btn,
+.ref-card-edit-btn svg,
+.ref-card-up-btn:not(:disabled),
+.ref-card-up-btn:not(:disabled) svg,
+.ref-card-down-btn:not(:disabled),
+.ref-card-down-btn:not(:disabled) svg {
+  color: #6e6259 !important;
+  stroke: #6e6259 !important;
+}
+
+.ref-card-action-btn:focus,
+.ref-card-action-btn:focus-visible,
+.ref-card-action-btn:active,
+.ref-card-edit-btn:focus,
+.ref-card-edit-btn:focus-visible,
+.ref-card-edit-btn:active {
+  outline: none !important;
+}
+
+.ref-card-action-btn:not(:hover),
+.ref-card-edit-btn:not(:hover) {
+  border-color: transparent !important;
+  outline: none !important;
+}
+
+.ref-card-action-btn:disabled,
+.ref-card-action-btn:disabled svg,
+.ref-card-up-btn:disabled,
+.ref-card-up-btn:disabled svg,
+.ref-card-down-btn:disabled,
+.ref-card-down-btn:disabled svg {
+  color: #d5cfc9 !important;
+  stroke: #d5cfc9 !important;
+  border-color: transparent !important;
+  opacity: 1 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+}
+
+.ref-card-trash-btn,
+.ref-card-trash-btn svg {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+}
+
+/* Quick Links Manage card action icons: same as Reference Manage */
+.quick-link-manage-item-actions {
+  gap: 8px !important;
+}
+
+.quick-link-manage-item-actions button {
+  width: 26px !important;
+  height: 26px !important;
+}
+
+.quick-link-manage-item-actions button svg,
+.quick-link-manage-item-actions button svg.preview-icon,
+.quick-link-manage-item-actions button svg.quick-link-manage-icon {
+  width: 14px !important;
+  height: 14px !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+}
+
+.quick-link-manage-item-actions .quick-link-manage-delete-button svg {
+  width: 15px !important;
+  height: 15px !important;
+}
+
+/* Quick Links Manage row-start link icon: same as Reference Manage */
+.quick-link-manage-item-name svg.quick-link-gallery-link-icon {
+  width: 14px !important;
+  height: 14px !important;
+  min-width: 14px !important;
+  flex: 0 0 14px !important;
+  display: block !important;
+}
+
+/* Quick Links res-list-manage rows: icon sizes, hit targets, spacing */
+.res-list-manage .res-manage-item-left {
+  gap: 10px !important;
+}
+
+.res-list-manage .res-manage-link-chain-icon {
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+}
+
+.res-list-manage .res-manage-link-chain-icon svg {
+  width: 14px !important;
+  height: 14px !important;
+  flex-shrink: 0 !important;
+}
+
+.res-list-manage .res-manage-actions-toolbar {
+  gap: 8px !important;
+}
+
+.res-list-manage .res-manage-action-icon-btn {
+  width: 26px !important;
+  height: 26px !important;
+  min-width: 26px !important;
+  min-height: 26px !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 4px;
+}
+
+.res-list-manage .res-manage-action-icon-btn.edit svg,
+.res-list-manage .res-manage-action-icon-btn.move-up svg,
+.res-list-manage .res-manage-action-icon-btn.move-down svg {
+  width: 14px !important;
+  height: 14px !important;
+}
+
+.res-list-manage .res-manage-action-icon-btn.delete svg {
+  width: 15px !important;
+  height: 15px !important;
+}
+
+/* 12. Ensure single clean space before count in gallery folder cards */
+.ref-card-label .ref-card-count,
+.ref-card-left .ref-card-count,
+.folder-header .folder-name .folder-count {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+.right-content-panel.quick-links-editing .res-manage-inline-input:hover:not(:focus),
+.res-manage-inline-input:hover:not(:focus) {
+  border: 1px solid #d5cfc9 !important;
+  border-color: #d5cfc9 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  background-color: rgb(255, 255, 255) !important;
+}
+
+.res-manage-inline-input:focus,
+.res-manage-inline-input:active,
+.res-manage-inline-input:focus-visible {
+  border-color: #fca5a5 !important;
+  box-shadow: 0 0 0 3px #eb170014 !important;
+  outline: none !important;
+  background-color: rgb(255, 255, 255) !important;
+}
+
+/* ==========================================================================
+   FLOATING DARK PILL TOAST NOTIFICATION SYSTEM
+   ========================================================================== */
+
+/* Toast Notification Region Positioning */
+.toast-region {
+  position: fixed;
+  bottom: 24px;
+  top: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* Dark Pill Warning Container */
+.toast-pill.warning-toast {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #000000;
+  color: #ffffff !important;
+  padding: 8px 20px 8px 14px;
+  border-radius: 9999px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1;
+  pointer-events: auto;
+  animation: toastFadeIn 0.2s ease-out;
+}
+
+/* Blue / Cyan Info Icon */
+.toast-pill.warning-toast .toast-icon {
+  color: #00a3ff;
+  stroke: #00a3ff;
+  flex-shrink: 0;
+}
+
+/* White Toast Label */
+.toast-message,
+.toast-pill .toast-message,
+.toast-pill.warning-toast .toast-message,
+.toast-pill.warning-toast span,
+.toast-pill.warning-toast {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  white-space: nowrap;
+}
+
+@keyframes toastFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reference toasts: neutralise the global #root [role="alert"] styling */
+#root .toast-region .toast-pill.warning-toast[role="alert"],
+#root .toast-region .toast-pill.warning-toast[role="status"] {
+  position: static;
+  transform: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: auto;
+  max-width: none;
+  margin: 0;
+  padding: 8px 20px 8px 14px;
+  border: none;
+  border-radius: 9999px;
+  background-color: #000000;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.2;
+  white-space: nowrap;
+  pointer-events: auto;
+  animation: toastFadeIn 0.2s ease-out;
+}
+
+#root .toast-region .toast-pill.warning-toast[role="alert"]::before,
+#root .toast-region .toast-pill.warning-toast[role="status"]::before {
+  content: none;
+  display: none;
+}
+
+#root .toast-region .toast-pill.warning-toast .toast-icon {
+  width: 18px;
+  height: 18px;
+  color: #00a3ff;
+  stroke: #00a3ff;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   REDUCED WIDTH SCREEN LEVEL SCROLLBAR
+   ========================================================================== */
+
+/* Standard CSS */
+html,
+body,
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+/* WebKit / Chromium (Chrome, Edge, WebView) */
+::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+::-webkit-scrollbar-track,
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb,
+*::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover,
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
+
+/* ==========================================================================
+   COMPACT SEARCH BAR & SEARCH RESULTS SYSTEM
+   ========================================================================== */
+
+/* 1. Slim Search Bar Container */
+.hero-search {
+  height: 36px !important;
+  min-height: 36px !important;
+  max-height: 36px !important;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.hero-search__input {
+  height: 34px !important;
+  font-size: 14px !important;
+  color: #312c2a !important;
+  padding: 0 10px !important;
+}
+
+.hero-search__submit {
+  width: 28px !important;
+  height: 28px !important;
+}
+
+.hero-search__submit svg {
+  width: 15px !important;
+  height: 15px !important;
+}
+
+.hero-search__chip {
+  height: 24px !important;
+  font-size: 11px !important;
+  padding: 2px 8px !important;
+}
+
+/* 2. Section Headings */
+.search-section-header h3,
+.search-results h3,
+.search-results-section-title {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #312c2a !important;
+  margin: 16px 0 2px 0 !important;
+}
+
+.search-results-section-title span,
+.search-section-header h3 span,
+.search-results h3 span {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #eb1700 !important;
+}
+
+.search-section-subtitle,
+.search-results p.subtitle,
+.search-results-section-subtitle {
+  font-size: 12px !important;
+  color: #6e6259 !important;
+  margin: 0 0 8px 0 !important;
+}
+
+/* 3. Compact Search Result Card */
+.search-results-list,
+.search-results-card-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  width: 100% !important;
+}
+
+.search-result-card,
+.search-results-card,
+.search-results-card.has-nav-tooltip,
+.search-result-card.has-nav-tooltip {
+  position: relative !important;
+  height: auto !important;
+  min-height: auto !important;
+  padding: 10px 14px !important;
+  background-color: #ffffff !important;
+  border: 1px solid #d5cfc9 !important;
+  border-color: #d5cfc9 !important;
+  border-radius: 8px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
+.search-result-card:hover,
+.search-results-card:hover {
+  z-index: 20 !important;
+  background-color: #fef2f1 !important;
+  background: #fef2f1 !important;
+  border-color: #fca5a5 !important;
+}
+
+/* Card hover tooltip: placed on right side of cursor with text wrapping for large content */
+.search-result-cursor-tooltip {
+  position: fixed !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  background-color: #FFFFFF !important;
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  max-width: 420px !important;
+  white-space: normal !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  padding: 4px 8px !important;
+  border: 1px solid #111827 !important;
+  border-radius: 0px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) !important;
+  z-index: 99999 !important;
+  pointer-events: none !important;
+  transform: none !important;
+}
+
+.search-result-cursor-tooltip-web {
+  max-width: 420px !important;
+  white-space: normal !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+  line-height: 1.4 !important;
+}
+
+/* Card hover tooltip matching heading portion: aligned to right side */
+.search-results-card .nav-tooltip,
+.search-results-card .nav-tooltip-box,
+.search-result-card .nav-tooltip,
+.search-result-card .nav-tooltip-box {
+  position: absolute !important;
+  top: calc(100% + 4px) !important;
+  right: 16px !important;
+  left: auto !important;
+  transform: none !important;
+  background-color: #FFFFFF !important;
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  white-space: nowrap !important;
+  padding: 4px 8px !important;
+  border: 1px solid #111827 !important;
+  border-radius: 0px !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15) !important;
+  z-index: 1000 !important;
+  pointer-events: none !important;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
+}
+
+.search-results-card:hover .nav-tooltip,
+.search-results-card:hover .nav-tooltip-box,
+.search-result-card:hover .nav-tooltip,
+.search-result-card:hover .nav-tooltip-box,
+.search-results-card.has-nav-tooltip:hover .nav-tooltip,
+.search-results-card.has-nav-tooltip:hover .nav-tooltip-box {
+  opacity: 1 !important;
+  visibility: visible !important;
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+  background-color: #FFFFFF !important;
+  border: 1px solid #111827 !important;
+}
+
+/* 4. Internal Card Typography */
+.search-result-card .card-breadcrumb,
+.search-result-card .card-url,
+.search-results-card .search-results-breadcrumb,
+.search-results-card .search-results-domain,
+.search-results-breadcrumb-text {
+  font-size: 12px !important;
+  color: #6e6259 !important;
+  margin-bottom: 2px !important;
+}
+
+.search-result-card .card-title,
+.search-result-card h4,
+.search-results-card .search-results-card-title {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  color: #eb1700 !important;
+  margin: 0 0 4px 0 !important;
+  line-height: 1.3 !important;
+}
+
+.search-result-card .card-description,
+.search-results-card .search-results-card-description {
+  font-size: 14px !important;
+  color: #6e6259 !important;
+  line-height: 1.35 !important;
+  margin: 0 0 6px 0 !important;
+}
+
+/* 5. Compact Badges */
+.search-result-card .badge,
+.search-result-card .tag-pill,
+.search-results-card .search-results-type {
+  font-size: 10px !important;
+  padding: 1px 6px !important;
+  height: 18px !important;
+  line-height: 18px !important;
+  border: 1px solid #d5cfc9 !important;
+  border-color: #d5cfc9 !important;
+  border-radius: 3px !important;
+  background-color: #f9f8f7 !important;
+  background: #f9f8f7 !important;
+  color: #6e6259 !important;
+}
+
+.search-result-card .source-label,
+.search-results-card .source-label {
+  font-size: 11px !important;
+  color: #6e6259 !important;
+  margin-left: 6px !important;
+}
+
+/* 6. Search Term Highlight */
+mark.search-highlight,
+.search-highlight {
+  background-color: #eb170024 !important;
+  color: inherit !important;
+  padding: 0 1px !important;
+  border-radius: 2px !important;
+}
+
+/* =========================================================
+   Folder Hierarchy Child Document Rows Typography
+   ========================================================= */
+
+/* Left side: child file name */
+section.pane .folder-children .folder-doc-row .doc-name,
+section.pane .folder-children .folder-doc-row .file-name,
+section.pane .folder-children .folder-doc-row .child-file-title,
+section.pane .folder-children .folder-child-row .child-file-title,
+section.pane .folder-children .folder-doc-row span:first-of-type,
+section.pane .folder-children .child-left span,
+.folder-children .folder-doc-row .doc-name,
+.folder-children .folder-doc-row .file-name,
+.folder-children .folder-doc-row .child-file-title,
+.folder-children .folder-child-row .child-file-title,
+.folder-children .folder-doc-row span:first-of-type,
+.folder-children .child-left span {
+  color: #312c2a !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+}
+
+/* Right side: file size & file type metadata */
+section.pane .folder-children .folder-doc-row .doc-size,
+section.pane .folder-children .folder-doc-row .file-size,
+section.pane .folder-children .folder-doc-row .doc-type,
+section.pane .folder-children .folder-doc-row .file-type,
+section.pane .folder-children .folder-doc-row .meta-item,
+section.pane .folder-children .folder-doc-row .child-file-size,
+section.pane .folder-children .folder-doc-row .child-file-type,
+section.pane .folder-children .folder-child-row .child-file-size,
+section.pane .folder-children .folder-child-row .child-file-type,
+.folder-children .folder-doc-row .doc-size,
+.folder-children .folder-doc-row .file-size,
+.folder-children .folder-doc-row .doc-type,
+.folder-children .folder-doc-row .file-type,
+.folder-children .folder-doc-row .meta-item,
+.folder-children .folder-doc-row .child-file-size,
+.folder-children .folder-doc-row .child-file-type,
+.folder-children .folder-child-row .child-file-size,
+.folder-children .folder-child-row .child-file-type {
+  color: #6e6259 !important;
+  font-size: 12px !important;
+}
+
+/* File preview popup icons: 24px */
+.child-action-btn.ref-preview-btn svg {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.child-action-btn.ref-preview-btn {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+/* Quick Links view: match Reference icon badge, sizes and alignment */
+.panel-section-header .section-header-left {
+  align-items: flex-start;
+}
+
+.panel-section-header .active-section-badge-outline {
+  width: 44px;
+  height: 44px;
+  aspect-ratio: auto;
+  border-radius: 10px;
+  border: 1px solid #FECACA;
+  background: #FEF2F2;
+}
+
+.panel-section-header .active-section-badge-outline svg {
+  width: 22px;
+  height: 22px;
+}
+
+.view-a-row .ql-row-action-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+/* Left sidebar MANAGE button: match right-panel Manage button (icon, gap, weight, axis) */
+.sidebar-row-actions .sidebar-manage-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1 !important;
+  transition: opacity 0.15s ease !important;
+}
+
+.sidebar-row-actions .sidebar-manage-btn svg {
+  display: block !important;
+  width: 13px !important;
+  height: 13px !important;
+  flex-shrink: 0 !important;
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+}
+
+.sidebar-row-actions .sidebar-manage-btn span {
+  display: inline-block !important;
+  line-height: 1 !important;
+  color: #eb1700 !important;
+}
+
+.sidebar-row-actions .sidebar-manage-btn:hover {
+  background: transparent !important;
+  opacity: 0.85 !important;
+}
+
+
+
+
+

@@ -1,0 +1,499 @@
+/* ==========================================================================
+   MANAGE QUICK LINKS VIEW (Refactored)
+   ========================================================================== */
+
+/* 1. Outer Box & Nested Inner Card Structure */
+section.section-manage-pane,
+section.section-manage-card.pane {
+  background: #ffffff !important;
+  border: 1px solid #d5cfc9 !important;
+  border-radius: 8px !important;
+  padding: 20px !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-shadow: var(--shadow-xs, 0 1px 2px 0 rgba(0, 0, 0, 0.05));
+}
+
+/* Inner Big Box: Encloses the header, "Add Items", and "List Items" */
+.manage-inner-card {
+  background: #ffffff;
+  border: 1px solid #d5cfc9;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   2. TOP HEADER BANNER
+   ========================================================================== */
+.manage-header {
+  background: linear-gradient(89.47deg, rgba(15, 104, 178, 0.15) 0%, rgba(235, 23, 0, 0.15) 99.91%), #ffffff;
+  border-bottom: 1px solid #d5cfc9;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.manage-header-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.manage-header-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #312c2a !important;
+  margin: 0;
+  line-height: 1.2;
+}
+
+section.pane .manage-header-subtitle,
+section.section-manage-pane p.manage-header-subtitle,
+.manage-header-subtitle {
+  font-size: 13px;
+  color: #6e6259 !important;
+  margin-top: 4px;
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+.manage-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Item Count Badge (before Cancel) */
+.manage-header-badge {
+  background-color: #6e6259 !important;
+  color: #ffffff !important;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* "Cancel" Button */
+.manage-header-cancel {
+  background: #ffffff !important;
+  border: 1px solid #d5cfc9 !important;
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #312c2a !important;
+  cursor: pointer;
+  line-height: 1.2;
+  transition: background-color 0.15s ease;
+  font-family: inherit;
+}
+
+.manage-header-cancel:hover {
+  background: #f9fafb !important;
+}
+
+/* "Save" Button */
+.manage-header-save {
+  background: #eb1700 !important;
+  border: none !important;
+  border-radius: 6px;
+  padding: 6px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff !important;
+  cursor: pointer;
+  line-height: 1.2;
+  transition: background-color 0.15s ease;
+  font-family: inherit;
+}
+
+.manage-header-save:hover {
+  background: #c81400 !important;
+}
+
+/* Alert Message */
+.manage-alert-msg {
+  margin: 12px 24px 0 24px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #b91c1c;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   3. "ADD ITEMS" SECTION
+   ========================================================================== */
+.manage-add-section {
+  padding: 20px 24px 12px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.manage-add-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #312c2a !important;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.manage-add-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+}
+
+.manage-add-input {
+  flex: 1;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid #d5cfc9;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #312c2a !important;
+  background: #ffffff;
+  outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.manage-add-input::placeholder {
+  color: #6e6259 !important;
+  opacity: 1;
+}
+
+.manage-add-input:hover:not(:focus) {
+  border-color: #d5cfc9;
+}
+
+.manage-add-input:focus,
+.manage-add-input:active {
+  border-color: #fca5a5 !important;
+  box-shadow: 0 0 0 3px #eb170014 !important;
+}
+
+/* Dual input layout when hasDescription is true */
+.manage-add-row-with-desc {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+}
+
+.manage-add-row-with-desc .manage-add-name-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.manage-add-row-with-desc .manage-add-desc-input {
+  flex: 2;
+  min-width: 0;
+  height: 38px;
+  padding: 0 12px;
+  border: 1px solid #d5cfc9;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #312c2a !important;
+  background: #ffffff;
+  outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.manage-add-row-with-desc .manage-add-desc-input::placeholder {
+  color: #6e6259 !important;
+  opacity: 1;
+}
+
+.manage-add-row-with-desc .manage-add-desc-input:hover:not(:focus) {
+  border-color: #d5cfc9;
+}
+
+.manage-add-row-with-desc .manage-add-desc-input:focus,
+.manage-add-row-with-desc .manage-add-desc-input:active {
+  border-color: #fca5a5 !important;
+  box-shadow: 0 0 0 3px #eb170014 !important;
+}
+
+.manage-add-btn {
+  background: #eb1700 !important;
+  color: #ffffff !important;
+  border: none !important;
+  border-radius: 6px;
+  padding: 0 24px;
+  height: 38px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+  line-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
+  font-family: inherit;
+}
+
+.manage-add-btn:hover:not(:disabled) {
+  background: #c81400 !important;
+}
+
+.manage-add-btn:disabled {
+  opacity: 0.45 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+}
+
+/* ==========================================================================
+   4. "LIST ITEMS" SECTION & EDITABLE CARDS
+   ========================================================================== */
+.manage-list-section {
+  padding: 12px 24px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.manage-list-heading {
+  font-size: 14px;
+  font-weight: 600;
+  color: #312c2a !important;
+  margin: 0 0 6px 0;
+  line-height: 1.2;
+}
+
+.manage-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Outer Box For Each Category Row */
+.manage-card-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 48px;
+  padding: 0 16px;
+  background-color: #ffffff;
+  border: 1px solid #d5cfc9;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Left Section (Order Number + Text Input Control) */
+.manage-card-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+  margin-right: 16px;
+}
+
+/* Order Number Box */
+.manage-card-index {
+  background-color: #f1f5f9 !important;
+  color: #6e6259 !important;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+/* Category Text Input Control (matches "Type Item Name" style) */
+.manage-card-title-input {
+  flex: 1;
+  height: 34px;
+  padding: 0 12px;
+  border: 1px solid #d5cfc9;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #312c2a !important;
+  background: #ffffff;
+  outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.manage-card-title-input:hover:not(:focus) {
+  border-color: #d5cfc9;
+}
+
+.manage-card-title-input:focus,
+.manage-card-title-input:active {
+  border-color: #fca5a5 !important;
+  box-shadow: 0 0 0 3px #eb170014 !important;
+}
+
+/* Card Row with Description */
+.manage-card-left-with-desc {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+  margin-right: 16px;
+}
+
+.manage-card-left-with-desc .manage-card-title-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.manage-card-left-with-desc .manage-card-desc-input {
+  flex: 2;
+  min-width: 0;
+  height: 34px;
+  padding: 0 12px;
+  border: 1px solid #d5cfc9;
+  border-radius: 6px;
+  font-size: 13px;
+  color: #312c2a !important;
+  background: #ffffff;
+  outline: none;
+  box-sizing: border-box;
+  font-family: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.manage-card-left-with-desc .manage-card-desc-input::placeholder {
+  color: #6e6259 !important;
+  opacity: 1;
+}
+
+.manage-card-left-with-desc .manage-card-desc-input:hover:not(:focus) {
+  border-color: #d5cfc9;
+}
+
+.manage-card-left-with-desc .manage-card-desc-input:focus,
+.manage-card-left-with-desc .manage-card-desc-input:active {
+  border-color: #fca5a5 !important;
+  box-shadow: 0 0 0 3px #eb170014 !important;
+}
+
+/* Right Action Icons Toolbar */
+.manage-card-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Common Button/Icon Wrapper Style */
+.manage-card-action-btn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  line-height: 1;
+}
+
+.manage-card-action-btn svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+/* Up / Down Arrow States */
+.manage-card-action-btn.move-up,
+.manage-card-action-btn.move-down {
+  color: #6e6259 !important;
+}
+
+.manage-card-action-btn.move-up svg,
+.manage-card-action-btn.move-down svg {
+  color: inherit !important;
+  stroke: currentColor !important;
+}
+
+/* Disabled State: color: #d5cfc9; cursor: not-allowed; pointer-events: none; */
+.manage-card-action-btn:disabled,
+.manage-card-action-btn.move-up:disabled,
+.manage-card-action-btn.move-down:disabled {
+  color: #d5cfc9 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+  border-color: transparent !important;
+  opacity: 1 !important;
+}
+
+.manage-card-action-btn:disabled svg,
+.manage-card-action-btn.move-up:disabled svg,
+.manage-card-action-btn.move-down:disabled svg {
+  color: #d5cfc9 !important;
+  stroke: #d5cfc9 !important;
+}
+
+/* Hover State (Enabled only): border-color: #d5cfc9; color: #eb1700; */
+.manage-card-action-btn.move-up:hover:not(:disabled),
+.manage-card-action-btn.move-down:hover:not(:disabled) {
+  border-color: #d5cfc9 !important;
+  color: #eb1700 !important;
+  background: transparent !important;
+}
+
+.manage-card-action-btn.move-up:hover:not(:disabled) svg,
+.manage-card-action-btn.move-down:hover:not(:disabled) svg {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+}
+
+/* Delete Icon (Trash 2) */
+.manage-card-action-btn.delete {
+  color: #eb1700 !important;
+}
+
+.manage-card-action-btn.delete svg {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+}
+
+/* Delete Hover State: border-color: #d5cfc9; color: #eb1700; */
+.manage-card-action-btn.delete:hover:not(:disabled) {
+  border-color: #d5cfc9 !important;
+  color: #eb1700 !important;
+  background: transparent !important;
+}
+
+.manage-card-action-btn.delete:hover:not(:disabled) svg {
+  color: #eb1700 !important;
+  stroke: #eb1700 !important;
+}
